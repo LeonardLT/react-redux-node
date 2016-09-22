@@ -1,8 +1,6 @@
 React-Redux-Node-Demo
 =====================
 
-CI status: ![Build Status](https://travis-ci.org/js-demos/es6-project-demo.png?branch=master)
-
 All the changes to js files can be hot-reloaded in browser.
 
 ```
