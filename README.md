@@ -19,7 +19,8 @@ npm install
 npm start
 ```
 
-Then visit <http://localhost:3000>, you will see `Hello world` on the page.
+Then visit <http://localhost:3000>
+or <http://localhost:3000/admin> to switch different page
 
 If you modify `public/hello.jsx` to change the text, you will see the changes are applied to page instantly.
 
