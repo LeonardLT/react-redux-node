@@ -7,8 +7,8 @@ module.exports = {
   //   'webpack-hot-middleware/client'
   // ],
   entry: {
-    entry: "./public/entry.js",
-    admin: "./public/admin.js"
+    entry: "./public/component/index/entry.js",
+    admin: "./public/component/admin/admin.js"
   },
   output: {
     path: path.join(__dirname, '/assets/'),
@@ -17,14 +17,20 @@ module.exports = {
     chunkFilename: "[name].bundle.js"
   },
   module: {
-    loaders: [{
-      test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ['es2015', 'react']
-      }
-    }]
+    loaders: [
+        {
+              test: /\.(js|jsx)$/,
+              exclude: /node_modules/,
+              loader: 'babel',
+              query: {
+                presets: ['es2015', 'react']
+              }
+        },
+        {
+            test: /\.css$/,
+            loader: 'style-loader!css-loader'
+        }
+    ]
   },
   resolve: {
     extensions: ['', '.js', 'jsx']
