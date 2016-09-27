@@ -23,16 +23,16 @@ app.use(webpackHotMiddleware(compiler, {
 
 app.use(express.static('./public'));
 
-app.get('/hello', function(req, res) {
-  res.send('Hello, world!');
-});
+// app.get('/hello', function(req, res) {
+//   res.send('Hello, world!');
+// });
 
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/public/index.html')
+  res.sendFile(__dirname + '/public/component/index/index.html')
 });
 
 app.get('/admin', function(req, res) {
-  res.sendFile(__dirname + '/public/admin.html')
+  res.sendFile(__dirname + '/public/component/admin/admin.html')
 });
 
 app.listen(3000, function() {
