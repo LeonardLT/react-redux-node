@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require("path");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   // entry: [
@@ -7,14 +8,14 @@ module.exports = {
   //   'webpack-hot-middleware/client'
   // ],
   entry: {
-    entry: "./public/component/index/entry.js",
-    admin: "./public/component/admin/admin.js"
+    index: "./public/component/index/index",
+    admin: "./public/component/admin/index"
   },
   output: {
     path: path.join(__dirname, '/assets/'),
     publicPath: '/assets/',
-    filename: '[name].bundle.js',
-    chunkFilename: "[name].bundle.js"
+    filename: '[name]/entry.js',
+    chunkFilename: "[id].bundle.js"
   },
   module: {
     loaders: [
@@ -28,8 +29,13 @@ module.exports = {
         },
         {
             test: /\.css$/,
-            loader: 'style-loader!css-loader'
-        }
+            // loader: 'style-loader!css-loader'
+            loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader?{browsers:['last 5 versions', '> 1%', 'firefox 15']}")
+        },
+        {
+            test: /\.less/,
+            loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader?{browsers:['last 5 versions', '> 1%', 'firefox 15']}!less-loader?sourceMap")
+        },
     ]
   },
   resolve: {
@@ -43,9 +49,12 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
       new webpack.optimize.CommonsChunkPlugin({
-          name: 'vendors', // 将公共模块提取，生成名为`vendors`的chunk
-          chunks: ['vendors','entry','admin'], //提取哪些模块共有的部分
-          minChunks: 3 // 提取至少3个模块共有的部分
+          name: 'commons', // 将公共模块提取，生成名为`vendors`的chunk
+          chunks: ['index','admin'], //提取哪些模块共有的部分
+          filename: '[name]/bundle.js',
+          minChunks: 4,
       }),
+      //合并css文件
+    new ExtractTextPlugin('[name]/style.css', {allChunks: false}),
   ]
 }
