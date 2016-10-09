@@ -15,6 +15,14 @@ class Hello extends React.Component {
                 <Header></Header>
                 <div className="container">
                     <h2>test <span style={red}>index</span>'s page</h2>
+                    <div className="col clearfix">
+                        <div className="col-li">1</div>
+                        <div className="col-li">2</div>
+                        <div className="col-li">3</div>
+                        <div className="col-li">4</div>
+                        <div className="col-li">5</div>
+                        <div className="col-li">5</div>
+                    </div>
                 </div>
                 <Footer></Footer>
             </div>)

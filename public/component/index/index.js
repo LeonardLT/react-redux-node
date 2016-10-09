@@ -1,7 +1,9 @@
 import Hello from './hello.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
+require('../../styles/index.css');
+
+// import $ from 'jquery';
 
 ReactDOM.render(
   <Hello />,
@@ -9,7 +11,7 @@ ReactDOM.render(
 );
 
 // use jquery
-console.log($('#content').text());
+// console.log($('#content').text());
 
 // Notice!!!
 // Following is required to make reloading happen
