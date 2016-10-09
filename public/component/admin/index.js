@@ -1,7 +1,7 @@
 import Hello from './mana.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 ReactDOM.render(
     <Hello />,
@@ -9,7 +9,7 @@ ReactDOM.render(
 );
 
 // use jquery
-console.log($('#content').text());
+// console.log($('#content').text());
 
 // Notice!!!
 // Following is required to make reloading happen
