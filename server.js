@@ -21,18 +21,18 @@ app.use(webpackHotMiddleware(compiler, {
   log: console.log
 }));
 
-app.use(express.static('./public'));
+app.use(express.static('./assets/'));
 
 // app.get('/hello', function(req, res) {
 //   res.send('Hello, world!');
 // });
 
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/public/component/index/index.html')
+  res.sendFile(__dirname + '/assets/index/index.html')
 });
 
 app.get('/admin', function(req, res) {
-  res.sendFile(__dirname + '/public/component/admin/admin.html')
+  res.sendFile(__dirname + '/assets/admin/index.html')
 });
 
 app.listen(3000, function() {
