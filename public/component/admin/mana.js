@@ -5,7 +5,7 @@
  */
 import React from 'react';
 import Header from '../header/header';
-import Footer from '../footer/index';
+import Footer from '../footer/footer';
 
 class Hello extends React.Component {
     render() {
@@ -19,7 +19,31 @@ class Hello extends React.Component {
         <div className="">
             <Header></Header>
             <div className="container">
-                <h2>test <span style={red}>admin</span>'s page</h2>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                admin test.....
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
             </div>
             <Footer></Footer>
         </div>)

@@ -1,6 +1,7 @@
-import Index from './hello.js';
+import Index from './content.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
+require('../../styles/common.css');
 require('../../styles/index.css');
 
 // import $ from 'jquery';
