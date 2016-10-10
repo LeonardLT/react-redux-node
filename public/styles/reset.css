@@ -1,0 +1,61 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header,
+menu, nav, section,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+html {  -webkit-text-size-adjust: 100%;  margin: 0;  padding: 0;  }
+blockquote:before, blockquote:after, q:before, q:after {  content: '';  content: none;  }
+*{margin:0;padding:0;resize:none;outline:none;}
+input{filter:chroma(color=#000000);}
+table{border-collapse:collapse}
+html,fieldset,img{border:0}
+ol,ul{list-style:none}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;-webkit-tap-highlight-color:rgba(255,255,255,0);outline:none;resize:none;}
+i,em{font-style:normal;}
+* html input,* html textarea,* html select,*+html input,*+html textarea,*+html select{font-size:100%}
+.clear { clear: both; height: 0; font-size:0; line-height: 0; overflow: hidden; display: block; }
+.mask{display:none;width:100%;height:100%;position:fixed;top:0;left:0;z-index:999;background-color:rgba(0,0,0,0.3);}
+a{text-decoration:none;color:#222;}
+a:focus{outline:none}
+.fl{float:left}
+.fr{float:right}
+.tl{text-align:left;}
+.tr{text-align:right;}
+.tc{text-align:center;}
+::-webkit-scrollbar-track {  background-color: #b46868;  }
+::-webkit-scrollbar-thumb {  background-color: rgba(0, 0, 0, 0.2);  }
+::-webkit-scrollbar-button {  background-color: #7c2929;  }
+::-webkit-scrollbar-corner {  background-color: black;  }
+.clearfix {*zoom: 1}
+.clearfix:after {
+    content: ".";     /*内容为“.”就是一个英文的句号而已。也可以不写。*/
+    display: block;   /*加入的这个元素转换为块级元素。*/
+    clear: both;     /*清除左右两边浮动。*/
+    visibility: hidden;      /*可见度设为隐藏。注意它和display:none;是有区别的。visibility:hidden;仍然占据空间，只是看不到而已；*/
+    line-height: 0;    /*行高为0；*/
+    height: 0;     /*高度为0；*/
+    font-size:0;    /*字体大小为0；*/
+}
+* {  -webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  box-sizing: border-box;  }
+.inline {  display: inline-block;  zoom: 1;  *display: inline;  }
