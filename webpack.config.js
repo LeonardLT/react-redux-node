@@ -41,6 +41,14 @@ module.exports = {
             test: /\.less/,
             loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader?{browsers:['last 5 versions', '> 1%', 'firefox 15']}!less-loader?sourceMap")
         },
+        {
+            test: /\.(png|jpg|gif)$/,
+            loader: 'url-loader?limit=8192&name=./img/[hash].[ext]',
+        },
+        {
+            test: /\.(woff|woff2|svg|eot|ttf)\??.*$/,
+            loader: 'file?name=./fonts/[name].[ext]',
+        }
     ]
   },
   resolve: {
