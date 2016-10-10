@@ -1,6 +1,11 @@
 const webpack = require('webpack');
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+var configPlugins = require("./config/plugins.config.js");
+
+// configPlugins.push(new webpack.DefinePlugin({
+//     IS_PRODUCTION: false,
+// }));
 
 module.exports = {
   // entry: [
@@ -13,7 +18,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '/assets/'),
-    publicPath: '/assets/',
+    publicPath: '/',
     filename: '[name]/entry.js',
     chunkFilename: "[id].bundle.js"
   },
@@ -41,20 +46,27 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', 'jsx']
   },
-  plugins: [
+  plugins: configPlugins
+      // [
     // Webpack 1.0
-    new webpack.optimize.OccurenceOrderPlugin(),
+    // new webpack.optimize.OccurenceOrderPlugin(),
     // Webpack 2.0 fixed this mispelling
     // new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-      new webpack.optimize.CommonsChunkPlugin({
-          name: 'commons', // 将公共模块提取，生成名为`vendors`的chunk
-          chunks: ['index','admin'], //提取哪些模块共有的部分
-          filename: '[name]/bundle.js',
-          minChunks: 4,
-      }),
-      //合并css文件
-    new ExtractTextPlugin('[name]/style.css', {allChunks: false}),
-  ]
+    // new webpack.HotModuleReplacementPlugin(),
+    // new webpack.NoErrorsPlugin(),
+    //   new webpack.optimize.CommonsChunkPlugin({
+    //       name: 'commons', // 将公共模块提取，生成名为`vendors`的chunk
+    //       chunks: ['index','admin'], //提取哪些模块共有的部分
+    //       filename: '[name]/bundle.js',
+    //       minChunks: 4,
+    //   }),
+    //合并css文件
+    // new ExtractTextPlugin('[name]/style.css', {allChunks: false}),
+    // new HtmlWebpackPlugin({
+    //     title: 'jnexpert-v4.0',
+    //     template: 'public/index.html',
+    //     filename: '[name]/index.html'
+    // })
+
+  // ]
 }
