@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../header/header';
 import Footer from '../footer/index';
 
-class Hello extends React.Component {
+class Index extends React.Component {
     render() {
         const red = {
             display: 'inline-block',
@@ -28,4 +28,4 @@ class Hello extends React.Component {
             </div>)
     }
 }
-export default Hello;
+export default Index;

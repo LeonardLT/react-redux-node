@@ -1,4 +1,4 @@
-import Hello from './hello.js';
+import Index from './hello.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 require('../../styles/index.css');
@@ -6,7 +6,7 @@ require('../../styles/index.css');
 // import $ from 'jquery';
 
 ReactDOM.render(
-  <Hello />,
+  <Index />,
   document.getElementById("content")
 );
 
