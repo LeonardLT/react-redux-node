@@ -1,0 +1,289 @@
+/*动画*/
+
+@-webkit-keyframes modelFadeIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3D(0, -15%, 0);
+        -moz-transform: translate3D(0, -15%, 0);
+        transform: translate3D(0, -15%, 0);
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate3D(0, 0, 0);
+        -moz-transform: translate3D(0, 0, 0);
+        transform: translate3D(0, 0, 0);
+    }
+}
+
+@-moz-keyframes modelFadeIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3D(0, -15%, 0);
+        -moz-transform: translate3D(0, -15%, 0);
+        transform: translate3D(0, -15%, 0);
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate3D(0, 0, 0);
+        -moz-transform: translate3D(0, 0, 0);
+        transform: translate3D(0, 0, 0);
+    }
+}
+
+@keyframes modelFadeIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3D(0, -15%, 0);
+        -moz-transform: translate3D(0, -15%, 0);
+        transform: translate3D(0, -15%, 0);
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate3D(0, 0, 0);
+        -moz-transform: translate3D(0, 0, 0);
+        transform: translate3D(0, 0, 0);
+    }
+}
+
+.model-fadeIn {
+    -webkit-animation-name: modelFadeIn;
+       -moz-animation-name: modelFadeIn;
+            animation-name: modelFadeIn;
+    -webkit-animation-duration: 1s;
+       -moz-animation-duration: 1s;
+            animation-duration: 1s;
+}
+
+@-webkit-keyframes slowFadeIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3D(0, -5%, 0);
+        -moz-transform: translate3D(0, -5%, 0);
+        transform: translate3D(0, -5%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate3D(0, 0, 0);
+        -moz-transform: translate3D(0, 0, 0);
+        transform: translate3D(0, 0, 0);
+    }
+}
+
+@-moz-keyframes slowFadeIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3D(0, -5%, 0);
+        -moz-transform: translate3D(0, -5%, 0);
+        transform: translate3D(0, -5%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate3D(0, 0, 0);
+        -moz-transform: translate3D(0, 0, 0);
+        transform: translate3D(0, 0, 0);
+    }
+}
+
+@keyframes slowFadeIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3D(0, -5%, 0);
+        -moz-transform: translate3D(0, -5%, 0);
+        transform: translate3D(0, -5%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate3D(0, 0, 0);
+        -moz-transform: translate3D(0, 0, 0);
+        transform: translate3D(0, 0, 0);
+    }
+}
+
+.name-fadeIn {
+    -webkit-animation-name: slowFadeIn;
+    -moz-animation-name: slowFadeIn;
+    animation-name: slowFadeIn;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    -moz-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: .7s;
+    -moz-animation-duration: .7s;
+    animation-duration: .7s;
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@-moz-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+.fadeOut {
+    -webkit-animation-name: fadeOut;
+    -moz-animation-name: fadeOut;
+    animation-name: fadeOut;
+    -webkit-animation-duration: .7s;
+    -moz-animation-duration: .7s;
+    animation-duration: .7s;
+}
+
+/*btn loading 动画 start*/
+@-webkit-keyframes loading {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}
+@-moz-keyframes loading {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+        -moz-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}
+@keyframes loading {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+        -moz-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}
+/*btn loading 动画 end*/
+
+/* radio checkbox start */
+@-webkit-keyframes radio-out {
+    0% {
+        -webkit-transform: scale(1) rotate(-45deg);
+        transform: scale(1) rotate(-45deg);
+    }
+    100% {
+        -webkit-transform: scale(0) rotate(-45deg);
+        transform: scale(0) rotate(-45deg);
+    }
+}
+
+@-webkit-keyframes radio-in {
+    0% {
+        -webkit-transform: scale(0) rotate(-45deg);
+        transform: scale(0) rotate(-45deg);
+    }
+    80% {
+        -webkit-transform: scale(1.2) rotate(-45deg);
+        transform: scale(1.2) rotate(-45deg);
+    }
+    100% {
+        -webkit-transform: scale(1) rotate(-45deg);
+        transform: scale(1) rotate(-45deg);
+    }
+}
+
+@-moz-keyframes radio-in {
+    0% {
+        -moz-transform: scale(0) rotate(-45deg);
+        transform: scale(0) rotate(-45deg);
+    }
+    80% {
+        -moz-transform: scale(1.2) rotate(-45deg);
+        transform: scale(1.2) rotate(-45deg);
+    }
+    100% {
+        -moz-transform: scale(1) rotate(-45deg);
+        transform: scale(1) rotate(-45deg);
+    }
+}
+
+@keyframes radio-in {
+    0% {
+        -webkit-transform: scale(0) rotate(-45deg);
+        -moz-transform: scale(0) rotate(-45deg);
+        transform: scale(0) rotate(-45deg);
+    }
+    80% {
+        -webkit-transform: scale(1.2) rotate(-45deg);
+        -moz-transform: scale(1.2) rotate(-45deg);
+        transform: scale(1.2) rotate(-45deg);
+    }
+    100% {
+        -webkit-transform: scale(1) rotate(-45deg);
+        -moz-transform: scale(1) rotate(-45deg);
+        transform: scale(1) rotate(-45deg);
+    }
+}
+/* radio checkbox end */
