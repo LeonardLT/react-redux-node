@@ -3,40 +3,72 @@
  * Date: 16/9/26
  * Time: 上午10:47
  */
-import React, {Component, PropTypes,} from 'react';
-require('../../styles/header.css');
+import React, { Component } from 'react';
+import logo from '../../img/index/logo.png';
 
 class Header extends Component {
     constructor(props) {
         super(props)
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleClick(e) {
-        const hideEle = this.refs.index;
-        console.log(hideEle);
-
-        hideEle.style.display = "none";
-
-        e.preventDefault();
-        e.stopPropagation();
     }
 
     render() {
         return (
             <div className="header">
-                <div className="container">
-                    <ul className="clearfix">
-                        <li ref="index">
-                            <a href="#" onClick={ this.handleClick }>首页</a>
-                        </li>
-                        <li>
-                            <a href="#">微课</a>
-                        </li>
-                        <li>
-                            <a href="#">登陆</a>
-                        </li>
-                    </ul>
+                <div className="container pos-rel">
+                    <div className="h-box">
+                        <div className="logo">
+                            <a href="/">
+                                <img src={logo} alt="锦囊专家" />
+                            </a>
+                        </div>
+                        <div className="nav">
+                            <ul className="h-nav-list">
+                                <li className="nav-li nav-active">
+                                    <a href="jn-index.html">首页</a>
+                                </li>
+                                <li className="nav-li">
+                                    <a>微课</a>
+                                </li>
+                                <li className="nav-li">
+                                    <a>献计</a>
+                                </li>
+                                <li className="nav-li">
+                                    <a className="login">登陆</a>
+                                </li>
+                                <li className="nav-li">
+                                    <a href="jn-register.html">注册</a>
+                                </li>
+                                <li className="nav-li nav-li-own">
+                                    <a href="" className="h-name overflow">周丹丹</a>
+                                    <i className="iconfont icon-down icon-down-posi"></i>
+                                    <ul className="own-list name-fadeIn">
+                                        <li>
+                                            <a href="" className="">我的订单</a>
+                                        </li>
+                                        <li>
+                                            <a href="" className="">消息中心</a>
+                                            <i className="h-message-num"></i>
+                                        </li>
+                                        <li>
+                                            <a href="" className="">我的收藏</a>
+                                        </li>
+                                        <li>
+                                            <a href="" className="">个人设置</a>
+                                        </li>
+                                        <li>
+                                            <a href="" className="">退出</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li className="nav-li">
+                                    <a>成为专家</a>
+                                </li>
+                                <li className="search">
+                                    <i className="icon iconfont icon-search"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
