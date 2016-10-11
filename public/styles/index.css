@@ -333,26 +333,26 @@
 }
 
 .swiper-button-prev {
-    background-image: url("../img/expert/left.png");
-    background-size: 32px;
-    height: 44px;
-    width: 44px;
-    left: -40px;
-    top: 150px;
+    background-image: url("../img/expert/left.png")!important;
+    background-size: 32px!important;
+    height: 44px!important;
+    width: 44px!important;
+    left: -40px!important;
+    top: 150px!important;
 }
 .swiper-button-prev:hover {
-    background-image: url("../img/expert/left-2.png");
+    background-image: url("../img/expert/left-2.png")!important;
 }
 .swiper-button-next {
-    background-image: url("../img/expert/right-2.png");
-    background-size: 32px;
-    height: 44px;
-    width: 44px;
-    right: -40px;
-    top: 150px;
+    background-image: url("../img/expert/right-2.png")!important;
+    background-size: 32px!important;
+    height: 44px!important;
+    width: 44px!important;
+    right: -40px!important;
+    top: 150px!important;
 }
 .swiper-button-next:hover {
-    background-image: url("../img/expert/right.png");
+    background-image: url("../img/expert/right.png")!important;
 }
 
 .find {
