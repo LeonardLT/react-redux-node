@@ -5,7 +5,6 @@
  */
 import React, {Component} from 'react';
 import Swiper from 'react-id-swiper';
-require('../../styles/swiper.min.css');
 
 class swiper extends Component {
     constructor(props) {
