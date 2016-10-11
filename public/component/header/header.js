@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import logo from '../../img/index/logo.png';
 require('../../less/form.less');
 import Login from './login';
-import Register from './register';
+import Register from './reg';
 
 class Header extends Component {
     constructor(props) {
@@ -19,18 +19,16 @@ class Header extends Component {
         e.stopPropagation();
         e.preventDefault();
 
-        const loginBox = document.getElementById('register-model');
-
-        loginBox.style.display = 'block';
+        document.getElementById('model').style.display = 'block';
+        document.getElementById('reg').style.display = 'block';
     }
 
     loginClick(e) {
         e.stopPropagation();
         e.preventDefault();
 
-        const loginBox = document.getElementById('login-model');
-
-        loginBox.style.display = 'block';
+        document.getElementById('model').style.display = 'block';
+        document.getElementById('login').style.display = 'block';
     }
 
     render() {
@@ -93,7 +91,6 @@ class Header extends Component {
                     </div>
                 </div>
                 <Login></Login>
-                <Register></Register>
             </div>
         );
     }
