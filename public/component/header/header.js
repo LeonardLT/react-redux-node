@@ -5,10 +5,32 @@
  */
 import React, { Component } from 'react';
 import logo from '../../img/index/logo.png';
+require('../../less/form.less');
+import Login from './login';
+import Register from './register';
 
 class Header extends Component {
     constructor(props) {
         super(props)
+        this.loginClick = this.loginClick.bind(this);
+        this.registerClick = this.registerClick.bind(this);
+    }
+    registerClick(e) {
+        e.stopPropagation();
+        e.preventDefault();
+
+        const loginBox = document.getElementById('register-model');
+
+        loginBox.style.display = 'block';
+    }
+
+    loginClick(e) {
+        e.stopPropagation();
+        e.preventDefault();
+
+        const loginBox = document.getElementById('login-model');
+
+        loginBox.style.display = 'block';
     }
 
     render() {
@@ -33,9 +55,9 @@ class Header extends Component {
                                     <a>献计</a>
                                 </li>
                                 <li className="nav-li">
-                                    <a className="login">登陆</a>
+                                    <a className="login" ref='login' onClick={ e => this.loginClick(e) }>登陆</a>
                                 </li>
-                                <li className="nav-li">
+                                <li className="nav-li" onClick={ e => this.registerClick(e) }>
                                     <a href="jn-register.html">注册</a>
                                 </li>
                                 <li className="nav-li nav-li-own">
@@ -70,6 +92,8 @@ class Header extends Component {
                         </div>
                     </div>
                 </div>
+                <Login></Login>
+                <Register></Register>
             </div>
         );
     }
