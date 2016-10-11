@@ -34,12 +34,11 @@ module.exports = {
         },
         {
             test: /\.css$/,
-            // loader: 'style-loader!css-loader'
             loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader?{browsers:['last 5 versions', '> 1%', 'firefox 15']}")
         },
         {
-            test: /\.less/,
-            loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader?{browsers:['last 5 versions', '> 1%', 'firefox 15']}!less-loader?sourceMap")
+            test: /\.less$/,
+            loader: 'style-loader!css-loader!autoprefixer-loader?{browsers: ["last 5 versions","> 1%", "firefox 15"]}!less-loader?sourceMap'
         },
         {
             test: /\.(png|jpg|gif)$/,
