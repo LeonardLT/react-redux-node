@@ -1,18 +1,30 @@
+// import $ from 'jquery';
 import Index from './content.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import reducers from '../../reducers'
+import { loadMenus } from '../../actions/menus'
+
 require('../../styles/common.css');
 require('../../styles/index.css');
 
-// import $ from 'jquery';
+const store = createStore(
+    reducers,
+    applyMiddleware(thunk)
+);
+
+store.dispatch(loadMenus);
 
 ReactDOM.render(
-  <Index />,
+    <Provider store={store}>
+      <Index />
+    </Provider>,
   document.getElementById("content")
 );
 
-// use jquery
-// console.log($('#content').text());
 
 // Notice!!!
 // Following is required to make reloading happen
