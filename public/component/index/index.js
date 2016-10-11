@@ -9,6 +9,7 @@ import reducers from '../../reducers'
 import { loadMenus } from '../../actions/menus'
 
 require('../../styles/common.css');
+require('../../styles/swiper.min.css');
 require('../../styles/index.css');
 
 const store = createStore(
