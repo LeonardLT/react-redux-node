@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import reducers from '../../reducers'
-import { loadMenus } from '../../actions/menus'
+import { loadMenus, loadNumber } from '../../actions/menus'
 
 require('../../styles/common.css');
 require('../../styles/swiper.min.css');
@@ -18,6 +18,7 @@ const store = createStore(
 );
 
 store.dispatch(loadMenus);
+store.dispatch(loadNumber);
 
 ReactDOM.render(
     <Provider store={store}>
