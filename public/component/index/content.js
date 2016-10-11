@@ -5,6 +5,7 @@ import Category from './category'
 import Swiper from './swiper'
 import DataContent from './data'
 import Fix from './fix'
+import Question from './question'
 
 class Index extends React.Component {
     render() {
@@ -16,6 +17,7 @@ class Index extends React.Component {
                 <Swiper></Swiper>
                 <Fix></Fix>
                 <DataContent></DataContent>
+                <Question></Question>
                 <Footer></Footer>
             </div>)
     }

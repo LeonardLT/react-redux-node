@@ -4,117 +4,70 @@
  * Time: 下午4:27
  */
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 
-class category extends Component {
-    render() {
-        return (
-            <div className="container pos-rel mt">
-                <div className="cate-container">
-                    <div className="category">
-                        <div className="category-box">
-                            <ul className="ca-ul">
-                                <li className="ca-li">
-                                    <a className="cate-a" href="">传统企业+互联网</a>
-                                    <div className="citem-detail citem-col-2">
-                                        <ul className="citem-children citem-chi-col">
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose">传统企业</a>
-                                            </li>
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose overflow" title="海量数据企业级大数据平台架构">海量数据企业级大数据平台架构</a>
-                                            </li>
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose overflow">选购3</a>
-                                            </li>
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose overflow">海量数据企业级大数据平台架构</a>
-                                            </li>
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose overflow">选购sd</a>
-                                            </li>
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose overflow">选购sdfg</a>
-                                            </li>
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose">选购sdfg</a>
-                                            </li>
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose">选购sdfg</a>
-                                            </li>
+const Category = ( {menus} ) => {
+    return (
+        <div className="container pos-rel mt">
+            <div className="cate-container">
+                <div className="category">
+                    <div className="category-box">
+                        <ul className="ca-ul">
+                            {
+                                menus.map((item, index) => {
+                                    const containerClass = item.content.length > 8 ? 'citem-detail citem-col-2' : 'citem-detail citem-col-1';
+                                    return (
+                                        <li className="ca-li" key={index}>
+                                            <a className="cate-a" href="">{item.item}</a>
+                                            <div className={containerClass}>
+                                                <ul className="citem-children citem-chi-col">
+                                                    {
+                                                        item.content.map((subMenu, index) => {
+                                                            if(index >= 8) {
+                                                                return;
+                                                            }
+                                                            return (
+                                                                <li className="citem-chi-list" key={index}>
+                                                                    <a href="#" className="choose">{subMenu}</a>
+                                                                </li>
+                                                            )
+                                                        })
+                                                    }
 
-                                        </ul>
-                                        <ul className="citem-children citem-chi-col">
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose overflow">传统企业</a>
-                                            </li>
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose overflow">互联网</a>
-                                            </li>
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose overflow">选购3</a>
-                                            </li>
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose overflow">选购34</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li className="ca-li">
-                                    <a className="cate-a" href="">品牌推广和网络营销</a>
-                                    <div className="citem-detail citem-col-1">
-                                        <ul className="citem-children citem-chi-col">
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose overflow">传统企业</a>
-                                            </li>
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose overflow">互联网</a>
-                                            </li>
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose overflow">选购3</a>
-                                            </li>
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose overflow">选购34</a>
-                                            </li>
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose overflow">选购sd</a>
-                                            </li>
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose overflow">选购sdfg</a>
-                                            </li>
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose overflow">选购sdfg</a>
-                                            </li>
-                                            <li className="citem-chi-list">
-                                                <a href="#" className="choose overflow">选购sdfg</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li className="ca-li">
-                                    <a className="cate-a" href="">创业咨询与投融资</a>
-                                </li>
-                                <li className="ca-li">
-                                    <a className="cate-a" href="">互联网产品与技术</a>
-                                </li>
-                                <li className="ca-li">
-                                    <a className="cate-a" href="">电商运营与O2O</a>
-                                </li>
-                                <li className="ca-li">
-                                    <a className="cate-a" href="">流程管理与信息化</a>
-                                </li>
-                                <li className="ca-li">
-                                    <a className="cate-a" href="">企业规划与HR管理</a>
-                                </li>
-                            </ul>
-                        </div>
+                                                </ul>
+                                                <ul className="citem-children citem-chi-col">
+                                                    {
+                                                        item.content.map((subMenu, index) => {
+                                                            if(index >= 8 && index < 16) {
+                                                                return (
+                                                                    <li className="citem-chi-list" key={index}>
+                                                                        <a href="#" className="choose">{subMenu}</a>
+                                                                    </li>
+                                                                )
+                                                            }
+                                                        })
+                                                    }
+
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    )
+                                })
+                            }
+
+                        </ul>
                     </div>
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
-category.propTypes = {};
-category.defaultProps = {};
+const mapStateToProps = (state) => (state)
 
-export default category;
+// category.propTypes = {};
+// category.defaultProps = {};
+
+let wrapedCategory = connect(mapStateToProps)(Category);
+
+export default wrapedCategory;
