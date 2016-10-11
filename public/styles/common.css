@@ -581,7 +581,7 @@ body {
     outline: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.7);
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
 
@@ -733,7 +733,7 @@ body {
     line-height: 40px;
     color: #fff;
     cursor: pointer;
-    opacity: .9;
+    opacity: 1;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -741,11 +741,11 @@ body {
 }
 
 .i-btn:hover {
-    opacity: 1;
+    opacity: .85;
 }
 
 .i-btn:active {
-    background-color: #de4426;
+    background-color: #ab3e24;
 }
 
 .i-btn-disabled {
@@ -810,4 +810,10 @@ body {
 .or h3 {
     margin-top: 10px;
     font-size: 14px;
+}
+.cursor {
+    cursor: pointer;
+}
+#f-p-2, #f-p-1, #register-model, #reg, #login, #oversea-reg {
+    display: none;
 }
