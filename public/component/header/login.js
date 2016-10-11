@@ -41,6 +41,7 @@ class Login extends Component {
         document.getElementById('f-p-1').style.display = 'none';
         document.getElementById('f-p-2').style.display = 'none';
         document.getElementById('reg').style.display = 'none';
+        document.getElementById('oversea-reg').style.display = 'none';
     }
 
     showFindPasswordModel() {

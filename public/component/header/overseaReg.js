@@ -52,7 +52,7 @@ class OverseaReg extends Component {
                                     <div className="input-agreement">
                                         <label className="radio-box">
                                             <input type="checkbox" name="-1" id="radio-1-5" />
-                                            <label for="radio-1-5" className="checkbox-label"></label>
+                                            <label htmlFor="radio-1-5" className="checkbox-label"></label>
                                             <span>已阅读并同意</span>
                                         </label>
                                         <a href="" className="agreement" target="_blank">《锦囊专家用户协议》</a>
