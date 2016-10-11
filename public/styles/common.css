@@ -14,7 +14,7 @@ html {
 body {
     min-width: 1020px;
     margin: 0;
-    color: #3a3a3a;
+    color: #2c3035;
     font-size: 14px;
     font-family: "Microsoft Yahei", Helvetica, STHeiTi, sans-serif;
     background-color: #ffffff;
@@ -178,6 +178,7 @@ body {
 
 .col-3 img {
     width: 100%;
+    height: 100%;
 }
 
 .col-3:nth-child(3n + 2) {
@@ -589,29 +590,18 @@ body {
 
 .model-box {
     position: relative;
-    border-radius: 8px;
+    border-radius: 2px;
     box-shadow: 1px 7px 22px #222;
 }
 
 .model-close-i {
     position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 20px;
+    top: 10px;
+    right: 10px;
+    font-size: 16px;
     cursor: pointer;
-    opacity: .6;
+    opacity: .5;
 
-    -webkit-transform: scale(.8);
-
-    -moz-transform: scale(.8);
-
-    -ms-transform: scale(.8);
-
-    transform: scale(.8);
-    -webkit-transform-origin: 50% 50%;
-    -moz-transform-origin: 50% 50%;
-    -ms-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
@@ -619,11 +609,7 @@ body {
 
 .model-close-i:hover {
     color: #f65131;
-    opacity: .9;
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
+    opacity: .8;
 }
 
 .flex-box {
@@ -648,19 +634,24 @@ body {
 
 .model-login {
     width: 438px;
-    height: 440px;
+    padding-bottom: 60px;
     background-color: #fff;
 }
 
 .login-box {
     width: 290px;
-    margin: 40px auto 0 auto;
+    margin: 50px auto 0 auto;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 .model-logo {
     text-align: center;
+}
+.model-logo h1 {
+    font-size: 36px;
+    color: #2c3035;
+    margin-bottom: 36px;
 }
 
 .model-line {
@@ -678,15 +669,15 @@ body {
     width: 100%;
     height: 1px;
     display: block;
-    background-color: rgba(21, 23, 24, 0.5);
+    background-color: rgba(44, 48, 53, 0.1);
     position: absolute;
     top: 10px;
     z-index: -1;
 }
 
 .model-line span {
-    font-size: 18px;
-    color: rgba(21, 23, 24, 0.5);
+    font-size: 14px;
+    color: rgba(44, 48, 53, 0.2);
     display: inline-block;
     background-color: #fff;
     padding: 0 20px;
@@ -713,10 +704,12 @@ body {
     padding: 0 10px;
     color: rgba(21, 23, 24, .8);
     font-size: 14px;
+    background-color: #fcfaf8;
 }
 
 .input-box .input-text:focus {
     border: 1px solid rgba(246, 81, 49, 0.51);
+    background-color: #fff;
 }
 
 .input-box .input-info {
@@ -734,11 +727,13 @@ body {
     height: 40px;
     background-color: #f65131;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 3px;
+    border: none;
+    font-size: 18px;
     line-height: 40px;
     color: #fff;
     cursor: pointer;
-    opacity: .8;
+    opacity: .9;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -750,14 +745,7 @@ body {
 }
 
 .i-btn:active {
-    -webkit-transform: scale(.98);
-    -moz-transform: scale(.98);
-    -ms-transform: scale(.98);
-    transform: scale(.98);
-    -webkit-transform-origin: 50% 50%;
-    -moz-transform-origin: 50% 50%;
-    -ms-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
+    background-color: #de4426;
 }
 
 .i-btn-disabled {
@@ -794,7 +782,7 @@ body {
 }
 
 .i-red {
-    font-size: 12px;
+    font-size: 14px;
     color: #f65131;
 }
 .left-pass {
@@ -811,3 +799,15 @@ body {
 }
 
 /* model end */
+
+.col-5 {
+    float: left;
+    width: 50%;
+}
+.mt22 {
+    margin-top: 22px;
+}
+.or h3 {
+    margin-top: 10px;
+    font-size: 14px;
+}
