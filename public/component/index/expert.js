@@ -64,7 +64,7 @@ class expert extends Component {
                                                 <span>舒伯特</span>
                                                 <span className="e-star">
                                                 <i className="iconfont icon-star i-star"></i>
-                                                <span>五星专家</span>
+                                                <span className="i-star">五星专家</span>
                                             </span>
                                             </div>
                                             <div className="e-title overflow">华侨城ITD丶国资委委员</div>
@@ -89,7 +89,7 @@ class expert extends Component {
                                                 <span>舒伯特</span>
                                                 <span className="e-star">
                                                 <i className="iconfont icon-star i-star"></i>
-                                                <span>五星专家</span>
+                                                <span className="i-star">五星专家</span>
                                             </span>
                                             </div>
                                             <div className="e-title overflow">华侨城ITD丶国资委委员</div>
@@ -110,7 +110,7 @@ class expert extends Component {
                                                 <span>舒伯特</span>
                                                 <span className="e-star">
                                                 <i className="iconfont icon-star i-star"></i>
-                                                <span>五星专家</span>
+                                                <span className="i-star">五星专家</span>
                                             </span>
                                             </div>
                                             <div className="e-title overflow">华侨城ITD丶国资委委员</div>
