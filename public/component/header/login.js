@@ -4,12 +4,15 @@
  * Time: 下午1:15
  */
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import downloadImg from '../../img/login/code1.png'
 import weixin from '../../img/login/weixin.png'
 import FindPassIn from './findPasswordIn'
 import FindPassOut from './findPasswordOut'
 import Register from './reg'
 import OverRegister from './overseaReg'
+
+import request from 'superagent';
 
 class Login extends Component {
     constructor(props) {
@@ -24,7 +27,53 @@ class Login extends Component {
         e.stopPropagation();
         e.preventDefault();
 
-        console.log(123);
+        const dispatch = this.props.dispatch;
+
+        let code = this.refs.code.value;
+        let phone = this.refs.phone.value;
+        let password = this.refs.password.value;
+
+        const regTel = /^[1][0-9]{10}$/;
+
+        if(!regTel.test(phone) && code === "86") {
+            document.getElementById('phone-sug').style.display = "block";
+
+            return;
+        } else {
+            document.getElementById('phone-sug').style.display = "none";
+        }
+
+        if(password.length < 6 || password.length > 20) {
+            document.getElementById('pass-sug').style.display = "block";
+
+            return;
+        } else {
+            document.getElementById('pass-sug').style.display = "none";
+        }
+
+        const sendData = {
+            data: [ code, phone, password ]
+        }
+
+        request
+            .post('/api/login')
+            .send(sendData)
+            .end((err, res) => {
+                dispatch(
+                    {
+                        type: "login",
+                        data: res.body
+                    }
+                );
+
+                if(res.body.status === 1) {
+                    document.getElementById('model').style.display = "none";
+                } else {
+                    document.getElementById('login-failed').style.display = "none";
+                }
+
+                if(res.body.status === 0) document.getElementById('login-failed').style.display = "block";
+            })
     }
 
     showRegModel() {
@@ -68,18 +117,19 @@ class Login extends Component {
                                             </div>
                                             <form onSubmit={ e => this.submitForm(e) }>
                                                 <div className="input-box select-country">
-                                                    <select name="" id="2">
-                                                        <option value="123">+86 中国</option>
-                                                        <option value="234">美国</option>
+                                                    <select name="" id="2" defaultValue="86" ref="code">
+                                                        <option value="86">+86 中国</option>
+                                                        <option value="1">+1 美国</option>
                                                     </select>
                                                 </div>
                                                 <div className="input-box">
-                                                    <input type="text" className="input-text transition2" placeholder="手机号" />
-                                                    <div className="input-info input-phone">请输入正确的11位手机号码</div>
+                                                    <input type="text" className="input-text transition2" placeholder="手机号" ref="phone"/>
+                                                    <div className="input-info input-phone" id="phone-sug" ref="phone-sug">请输入正确的11位手机号码</div>
                                                 </div>
                                                 <div className="input-box">
-                                                    <input type="password" className="input-text transition2" placeholder="密码" />
-                                                    <div className="input-info input-password">账号或密码错误</div>
+                                                    <input type="password" className="input-text transition2" placeholder="密码" ref="password"/>
+                                                    <div className="input-info input-password" id="pass-sug">请输入大于6位小于20位的密码</div>
+                                                    <div className="input-info input-password" id="login-failed">请输入正确的账号信息</div>
                                                 </div>
 
                                                 <button className="i-btn transition2" type="submit">登陆</button>
@@ -144,4 +194,6 @@ class Login extends Component {
     }
 }
 
-export default Login;
+const wrapedHeader = connect()(Login);
+
+export default wrapedHeader;
