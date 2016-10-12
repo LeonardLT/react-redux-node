@@ -15,7 +15,7 @@ const img6 = require('../../img/expert/e8.jpg');
 class recommend extends Component {
     render() {
         return (
-            <div className="box gray">
+            <div className="box">
                 <div className="container">
                     <div className="tc">
                         <img src={titleImg} alt="" className="l-title" />
