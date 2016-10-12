@@ -11,3 +11,12 @@ export const menus = (state = {}, action) => {
             return state
     }
 }
+
+export const login = (state = {}, action) => {
+    switch (action.type) {
+        case 'login':
+            return action.data
+        default :
+            return state
+    }
+}
