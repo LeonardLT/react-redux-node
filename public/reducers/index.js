@@ -4,11 +4,11 @@
  * Time: 下午8:18
  */
 import { combineReducers } from 'redux'
-import { menus, number } from './menus'
+import { menus } from './menus'
 
 const reducers = combineReducers({
-    menus,
-    number
+    menus
+    // number
 })
 
 export default reducers;
