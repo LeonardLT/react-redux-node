@@ -8,6 +8,7 @@ import logo from '../../img/index/logo.png';
 require('../../less/form.less');
 import Login from './login';
 import Register from './reg';
+import { connect } from 'react-redux'
 
 class Header extends Component {
     constructor(props) {
@@ -32,7 +33,9 @@ class Header extends Component {
     }
 
     render() {
-        return (
+        const userData = this.props.login;
+
+        return userData.status === 1 ? (
             <div className="header">
                 <div className="container pos-rel">
                     <div className="h-box">
@@ -52,14 +55,8 @@ class Header extends Component {
                                 <li className="nav-li">
                                     <a>献计</a>
                                 </li>
-                                <li className="nav-li">
-                                    <a className="login" ref='login' onClick={ e => this.loginClick(e) }>登陆</a>
-                                </li>
-                                <li className="nav-li" onClick={ e => this.registerClick(e) }>
-                                    <a href="jn-register.html">注册</a>
-                                </li>
                                 <li className="nav-li nav-li-own">
-                                    <a href="" className="h-name overflow">周丹丹</a>
+                                    <a href="" className="h-name overflow">{userData.user.name}</a>
                                     <i className="iconfont icon-down icon-down-posi"></i>
                                     <ul className="own-list name-fadeIn">
                                         <li>
@@ -92,11 +89,55 @@ class Header extends Component {
                 </div>
                 <Login></Login>
             </div>
-        );
+        ) : (
+            <div className="header">
+                <div className="container pos-rel">
+                    <div className="h-box">
+                        <div className="logo">
+                            <a href="/">
+                                <img src={logo} alt="锦囊专家" />
+                            </a>
+                        </div>
+                        <div className="nav">
+                            <ul className="h-nav-list">
+                                <li className="nav-li nav-active">
+                                    <a href="jn-index.html">首页</a>
+                                </li>
+                                <li className="nav-li">
+                                    <a>微课</a>
+                                </li>
+                                <li className="nav-li">
+                                    <a>献计</a>
+                                </li>
+                                <li className="nav-li">
+                                    <a className="login" ref='login' onClick={ e => this.loginClick(e) }>登陆</a>
+                                </li>
+                                <li className="nav-li" onClick={ e => this.registerClick(e) }>
+                                    <a href="jn-register.html">注册</a>
+                                </li>
+                                <li className="nav-li">
+                                    <a>成为专家</a>
+                                </li>
+                                <li className="search">
+                                    <i className="icon iconfont icon-search"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <Login></Login>
+            </div>
+        )
     }
 }
 
-Header.propTypes = {};
-Header.defaultProps = {};
+// Header.propTypes = {};
+// Header.defaultProps = {};
 
-export default Header;
+const mapStateToProps = (state) => {
+    return state;
+}
+
+const WrapedLogin = connect(mapStateToProps)(Header);
+
+export default WrapedLogin;
