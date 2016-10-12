@@ -8,7 +8,6 @@ import { menus } from './menus'
 
 const reducers = combineReducers({
     menus
-    // number
 })
 
 export default reducers;
