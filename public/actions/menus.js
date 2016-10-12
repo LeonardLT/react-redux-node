@@ -16,14 +16,3 @@ export const loadMenus = (dispatch) => {
             })
         })
 }
-
-// export const loadNumber = (dispatch) => {
-//     request
-//         .get('/api/json')
-//         .end((err,res) => {
-//             dispatch({
-//                 type: 'numberLoaded',
-//                 data: res.body
-//             })
-//         })
-// }
