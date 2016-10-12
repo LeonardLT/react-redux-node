@@ -9,6 +9,7 @@ import Question from './question'
 import Expert from './expert'
 import Recommend from './recommend'
 import Partner from './partner'
+import Train from './train'
 
 class Index extends React.Component {
     render() {
@@ -22,6 +23,7 @@ class Index extends React.Component {
                 <DataContent></DataContent>
                 <Question></Question>
                 <Expert></Expert>
+                <Train></Train>
                 <Recommend></Recommend>
                 <Partner></Partner>
                 <Footer></Footer>
