@@ -4,7 +4,12 @@
  * Time: 下午2:33
  */
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import Login from './login'
+import OverRegister from './overseaReg'
+import request from 'superagent';
 require('../../styles/register.css')
+
 
 class Register extends Component {
     constructor(props) {
@@ -18,7 +23,69 @@ class Register extends Component {
         e.stopPropagation();
         e.preventDefault();
 
-        console.log(123);
+        const dispatch = this.props.dispatch;
+
+        let phone = this.refs.phone.value;
+        let name = this.refs.name.value;
+        let vcode = this.refs.verifyCode.value;
+        let password = this.refs.password.value;
+
+        const regTel = /^[1][0-9]{10}$/;
+        if(!regTel.test(phone)) {
+            document.getElementById('phone-sug1').style.display = "block";
+
+            return;
+        } else {
+            document.getElementById('phone-sug1').style.display = "none";
+        }
+
+        if(vcode.length === 0) {
+            document.getElementById('vcode-sug').style.display = "block";
+
+            return;
+        } else {
+            document.getElementById('vcode-sug').style.display = "none";
+        }
+
+        if(name.length === 0) {
+            document.getElementById('name-sug').style.display = "block";
+
+            return;
+        } else {
+            document.getElementById('name-sug').style.display = "none";
+        }
+
+        if(password.length < 6 || password.length > 20) {
+            document.getElementById('password-sug').style.display = "block";
+
+            return;
+        } else {
+            document.getElementById('password-sug').style.display = "none";
+        }
+
+        const sendData = {
+            data: [ phone, password, name, vcode ]
+        }
+
+        request
+            .post('/api/reg')
+            .send(sendData)
+            .end((err, res) => {
+                dispatch(
+                    {
+                        type: "reg",
+                        data: res.body
+                    }
+                );
+
+                if(res.body.status === 1) {
+                    document.getElementById('model').style.display = "none";
+                } else {
+                    document.getElementById('reg-failed').style.display = "none";
+                }
+
+                if(res.body.status === 0) document.getElementById('reg-failed').style.display = "block";
+            })
     }
 
     showOverseaRegModel() {
@@ -44,21 +111,22 @@ class Register extends Component {
                                 </div>
                                 <form onSubmit={ e => this.submitRegisterForm(e) }>
                                     <div className="input-box">
-                                        <input type="text" className="input-text transition2" placeholder="手机号" />
-                                        <div className="input-info input-phone">请输入正确的11位手机号码</div>
+                                        <input type="text" className="input-text transition2" placeholder="手机号" ref="phone"/>
+                                        <div className="input-info input-phone" id="phone-sug1">请输入正确的11位手机号码</div>
                                     </div>
                                     <div className="input-box">
-                                        <input type="text" className="input-text transition2 pos-rel" placeholder="验证码" />
+                                        <input type="text" className="input-text transition2 pos-rel" placeholder="验证码" ref="verifyCode"/>
                                         <div className="input-btn">获取验证码</div>
-                                        <div className="input-info input-phone">请输入验证码</div>
+                                        <div className="input-info input-phone" id="vcode-sug">请输入验证码</div>
                                     </div>
                                     <div className="input-box">
-                                        <input type="text" className="input-text transition2" placeholder="姓名" />
-                                        <div className="input-info input-phone">请输入正确的11位手机号码</div>
+                                        <input type="text" className="input-text transition2" placeholder="姓名" ref="name"/>
+                                        <div className="input-info input-phone" id="name-sug">请输入正确的姓名</div>
                                     </div>
                                     <div className="input-box">
-                                        <input type="password" className="input-text transition2" placeholder="设置密码" />
-                                        <div className="input-info input-password">账号或密码错误</div>
+                                        <input type="password" className="input-text transition2" placeholder="设置密码" ref="password"/>
+                                        <div className="input-info input-password" id="password-sug">请输入大于6位小于20位的密码</div>
+                                        <div className="input-info input-password" id="reg-failed">注册失败，请重试</div>
                                     </div>
                                     <div className="input-agreement">
                                         <label className="radio-box">
@@ -94,7 +162,9 @@ class Register extends Component {
     }
 }
 
-Register.propTypes = {};
-Register.defaultProps = {};
+//Register.propTypes = {};
+//Register.defaultProps = {};
 
-export default Register;
+const wrapedHeader = connect()(Register);
+
+export default wrapedHeader;

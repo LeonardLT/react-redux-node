@@ -33,6 +33,7 @@ class Header extends Component {
     }
 
     render() {
+        console.log(this.props);
         const userData = this.props.login;
 
         return userData.status === 1 ? (
@@ -126,6 +127,7 @@ class Header extends Component {
                     </div>
                 </div>
                 <Login></Login>
+                <Register></Register>
             </div>
         )
     }
