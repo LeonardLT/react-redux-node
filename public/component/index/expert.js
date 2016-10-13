@@ -52,7 +52,7 @@ class Expert extends Component {
                                                             <h3>{item.summary}</h3>
                                                         </div>
                                                     </div>
-                                                    <div className="e-name">{item.name}</div>
+                                                    <div className="e-name"><span>{item.name}</span>{item.fiveStart==1?<span className="e-star"><i className="iconfont icon-star i-star"></i><span className="i-star">五星专家</span></span>:<span></span>}</div>
                                                     <div className="e-title overflow">{item.title}</div>
                                                     <div className="e-tab overflow">
                                                         {

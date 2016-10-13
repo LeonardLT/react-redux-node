@@ -54,11 +54,11 @@ class Register extends Component {
                                     </div>
                                     <div className="input-box">
                                         <input type="text" className="input-text transition2" placeholder="姓名" />
-                                        <div className="input-info input-phone">请输入正确的11位手机号码</div>
+                                        <div className="input-info input-phone">请输入正确的姓名</div>
                                     </div>
                                     <div className="input-box">
                                         <input type="password" className="input-text transition2" placeholder="设置密码" />
-                                        <div className="input-info input-password">账号或密码错误</div>
+                                        <div className="input-info input-password">请输入大于6位小于20位的密码</div>
                                     </div>
                                     <div className="input-agreement">
                                         <label className="radio-box">
