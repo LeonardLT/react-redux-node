@@ -63,6 +63,14 @@ class Register extends Component {
             document.getElementById('password-sug').style.display = "none";
         }
 
+        if(!document.getElementById('radio-1-5').checked){
+            document.getElementById('agreement-sug').style.display = "block";
+            return;
+
+        } else {
+            document.getElementById('agreement-sug').style.display = "none";
+        }
+
         const sendData = {
             data: [ phone, password, name, vcode ]
         }
@@ -135,6 +143,7 @@ class Register extends Component {
                                             <span>已阅读并同意</span>
                                         </label>
                                         <a href="" className="agreement" target="_blank">《锦囊专家用户协议》</a>
+                                        <div className="input-info none" id="agreement-sug">请先阅读用户协议</div>
                                     </div>
                                     <button className="i-btn transition2" type="submit">注册</button>
 

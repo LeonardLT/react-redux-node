@@ -35,9 +35,8 @@ class Header extends Component {
     render() {
         const userData = this.props.login;
         const regUserData = this.props.reg;
-        console.log(regUserData);
 
-        return userData.status === 1 || regUserData.status===1 ? (
+        return userData.status === 1 || regUserData.status=== 1 ? (
             <div className="header">
                 <div className="container pos-rel">
                     <div className="h-box">
