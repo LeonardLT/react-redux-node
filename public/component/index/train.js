@@ -27,24 +27,26 @@ class Train extends Component {
                     {
                         train.map((item, index) =>{
                             return(
-                                <div className="col-2" id={item.memberid} key={index}>
-                                    <div className="pro-320">
-                                        <img src={img4} alt="" />
-                                    </div>
-                                    <div className="pro-card">
-                                        <div className="pro-name">{item.title}</div>
-                                        <div className="pro-icon">
-                                            <div className="inline pro-mr">
-                                                <i className="iconfont icon-heart pro-i"></i>
-                                                <span>{item.fav}</span>
-                                            </div>
-                                            <div className="inline">
-                                                <i className="iconfont icon-chat pro-i p-h"></i>
-                                                <span>{item.read}</span>
+                                <a href="" className="col-2" id={item.memberid} key={index}>
+                                    <div>
+                                        <div className="pro-320">
+                                            <img src={img4} alt="" />
+                                        </div>
+                                        <div className="pro-card">
+                                            <div className="pro-name">{item.title}</div>
+                                            <div className="pro-icon">
+                                                <div className="inline pro-mr">
+                                                    <i className="iconfont icon-heart pro-i"></i>
+                                                    <span>{item.fav}</span>
+                                                </div>
+                                                <div className="inline">
+                                                    <i className="iconfont icon-chat pro-i p-h"></i>
+                                                    <span>{item.read}</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             )
                         })
                     }

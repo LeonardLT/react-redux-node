@@ -15,7 +15,7 @@ class Question extends Component {
 
     render() {
         let questionData = this.props.menus.meetProblems;
-        
+
         return questionData ? 
          (
             <div className="box gray">
@@ -28,12 +28,14 @@ class Question extends Component {
                         {
                             questionData.map((item, index) => {
                                 return (
-                                <div className="col-3" key={index}>
-                                    <div className="img-card">
-                                        <img src={expertImg} alt=""/>
-                                    </div>
-                                    <div className="img-desc overflow" href="" id={item.id} dangerouslySetInnerHTML={{__html: item.title}}></div>
-                                </div>  
+                                <a href="" className="col-3" id={item.id} key={index}>
+                                    <div>
+                                        <div className="img-card">
+                                            <img src={expertImg} alt=""/>
+                                        </div>
+                                        <div className="img-desc overflow" href="" dangerouslySetInnerHTML={{__html: item.title}}></div>
+                                    </div> 
+                                </a> 
                                 )                                
                             })       
                         }      
