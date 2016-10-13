@@ -33,10 +33,11 @@ class Header extends Component {
     }
 
     render() {
-        console.log(this.props);
         const userData = this.props.login;
+        const regUserData = this.props.reg;
+        console.log(regUserData);
 
-        return userData.status === 1 ? (
+        return userData.status === 1 || regUserData.status===1 ? (
             <div className="header">
                 <div className="container pos-rel">
                     <div className="h-box">
@@ -57,7 +58,7 @@ class Header extends Component {
                                     <a>献计</a>
                                 </li>
                                 <li className="nav-li nav-li-own">
-                                    <a href="" className="h-name overflow">{userData.user.name}</a>
+                                    <a href="" className="h-name overflow">{userData.user? userData.user.name : regUserData.user.name}</a>
                                     <i className="iconfont icon-down icon-down-posi"></i>
                                     <ul className="own-list name-fadeIn">
                                         <li>
