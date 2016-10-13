@@ -15,7 +15,7 @@ class Question extends Component {
 
     render() {
         let questionData = this.props.menus.meetProblems;
-            console.log(questionData)
+        
         return questionData ? 
          (
             <div className="box gray">
@@ -32,7 +32,7 @@ class Question extends Component {
                                     <div className="img-card">
                                         <img src={expertImg} alt=""/>
                                     </div>
-                                    <div className="img-desc overflow" href="" id={item.id}>{item.title}</div>
+                                    <div className="img-desc overflow" href="" id={item.id} dangerouslySetInnerHTML={{__html: item.title}}></div>
                                 </div>  
                                 )                                
                             })       
@@ -49,9 +49,9 @@ const mapStateToProps = (state) => {
     return state;
 }
 
-let wrapedData = connect(mapStateToProps)(Question);
+let wrapedQues = connect(mapStateToProps)(Question);
 
 //question.propTypes = {};
 //question.defaultProps = {};
 
-export default wrapedData;
+export default wrapedQues;
