@@ -4,6 +4,7 @@
  * Time: 下午7:04
  */
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 const titleImg = require('../../img/index/font-12.png');
 const img1 = require('../../img/expert/e9.jpg');
 const img2 = require('../../img/expert/e10.jpg');
@@ -12,9 +13,12 @@ const img4 = require('../../img/expert/e5.jpg');
 const img5 = require('../../img/expert/e4.jpg');
 const img6 = require('../../img/expert/e8.jpg');
 
-class recommend extends Component {
+class Recommend extends Component {
     render() {
-        return (
+        let recommendServ = this.props.menus.serviceInfo;
+
+        return recommendServ?
+        (
             <div className="box">
                 <div className="container">
                     <div className="tc">
@@ -22,70 +26,38 @@ class recommend extends Component {
                     </div>
                     <div className="line"></div>
                     <div className="col-l-3 clearfix">
-                        <a href="">
-                            <div className="col-3">
-                                <div className="ser-card ser-hover">
-                                    <img src={img6} alt="" className="ex-img" />
-                                        <div className="fb fb-top transition">
-                                            <h3>如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退,最多被消费</h3>
+                    {
+                        recommendServ.map((item, index) =>{
+                            return(
+                                <a href="" className="col-3" id={item.memberid} key={index}>
+                                    <div>
+                                        <div className="ser-card ser-hover">
+                                            <img src={img6} alt="" className="ex-img" />
+                                                <div className="fb fb-top transition">
+                                                    <h3>{item.describe}</h3>
+                                                </div>
                                         </div>
-                                </div>
-                                <div className="img-desc id-2 overflow">公司内部管理出现问题</div>
-                            </div>
-                        </a>
-                        <div className="col-3">
-                            <div className="ser-card ser-hover">
-                                <img src={img1} alt="" className="ex-img" />
-                                    <div className="fb fb-top transition">
-                                        <h3>如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退,最多被消费</h3>
+                                        <div className="img-desc id-2 overflow">{item.title}</div>
                                     </div>
-                            </div>
-                            <div className="img-desc id-2 overflow">公司内部管理出现问题</div>
-                        </div>
-                        <div className="col-3">
-                            <div className="ser-card ser-hover">
-                                <img src={img2} alt="" className="ex-img" />
-                                    <div className="fb fb-top transition">
-                                        <h3>如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退,最多被消费</h3>
-                                    </div>
-                            </div>
-                            <div className="img-desc id-2 overflow">公司内部管理出现问题</div>
-                        </div>
-                        <div className="col-3">
-                            <div className="ser-card ser-hover">
-                                <img src={img3} alt="" className="ex-img" />
-                                    <div className="fb fb-top transition">
-                                        <h3>如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退,最多被消费</h3>
-                                    </div>
-                            </div>
-                            <div className="img-desc id-2 overflow">公司内部管理出现问题</div>
-                        </div>
-                        <div className="col-3">
-                            <div className="ser-card ser-hover">
-                                <img src={img4} alt="" className="ex-img" />
-                                    <div className="fb fb-top transition">
-                                        <h3>如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退,最多被消费</h3>
-                                    </div>
-                            </div>
-                            <div className="img-desc id-2 overflow">公司内部管理出现问题</div>
-                        </div>
-                        <div className="col-3">
-                            <div className="ser-card ser-hover">
-                                <img src={img5} alt="" className="ex-img" />
-                                    <div className="fb fb-top transition">
-                                        <h3>如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退,最多被消费</h3>
-                                    </div>
-                            </div>
-                            <div className="img-desc id-2 overflow">公司内部管理出现问题</div>
-                        </div>
+                                </a>
+                                )
+                            })
+                    }
+                    
                     </div>
                 </div>
             </div>
-        );
+        ): <div></div>;
     }
 }
 
-recommend.propTypes = {};
-recommend.defaultProps = {};
+const mapStateToProps = (state) => {
+    return state;
+}
 
-export default recommend;
+let wrapedRec = connect(mapStateToProps)(Recommend);
+
+//recommend.propTypes = {};
+//recommend.defaultProps = {};
+
+export default wrapedRec;

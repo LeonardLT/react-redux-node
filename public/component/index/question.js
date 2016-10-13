@@ -4,12 +4,20 @@
  * Time: 下午6:55
  */
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 const titleImg = require('../../img/index/font2.png')
 const expertImg = require('../../img/expert/e8.jpg')
 
-class question extends Component {
+class Question extends Component {
+    // constructor(props) {
+    //     super(props)
+    // }
+
     render() {
-        return (
+        let questionData = this.props.menus.meetProblems;
+
+        return questionData ? 
+         (
             <div className="box gray">
                 <div className="container">
                     <div className="tc">
@@ -17,32 +25,35 @@ class question extends Component {
                     </div>
                     <div className="line"></div>
                     <div className="col-l-3 clearfix">
-                        <div className="col-3">
-                            <div className="img-card">
-                                <img src={expertImg} alt=""/>
-                            </div>
-                            <div className="img-desc overflow">公司<span className="red">内部管理</span>出现问题</div>
-                        </div>
-                        <div className="col-3">
-                            <div className="img-card">
-                                <img src={expertImg} alt=""/>
-                            </div>
-                            <div className="img-desc overflow">已有产品但没有<span className="red">运营</span>团队</div>
-                        </div>
-                        <div className="col-3">
-                            <div className="img-card">
-                                <img src={expertImg} alt=""/>
-                            </div>
-                            <div className="img-desc overflow">创业者<span className="red">产品定位</span>不明确</div>
-                        </div>
+                        {
+                            questionData.map((item, index) => {
+                                return (
+                                <a href="" className="col-3" id={item.id} key={index}>
+                                    <div>
+                                        <div className="img-card">
+                                            <img src={expertImg} alt=""/>
+                                        </div>
+                                        <div className="img-desc overflow" href="" dangerouslySetInnerHTML={{__html: item.title}}></div>
+                                    </div> 
+                                </a> 
+                                )                                
+                            })       
+                        }      
                     </div>
                 </div>
             </div>
-        );
+        ) : <div></div>
     }
 }
 
-question.propTypes = {};
-question.defaultProps = {};
 
-export default question;
+const mapStateToProps = (state) => {
+    return state;
+}
+
+let wrapedQues = connect(mapStateToProps)(Question);
+
+//question.propTypes = {};
+//question.defaultProps = {};
+
+export default wrapedQues;

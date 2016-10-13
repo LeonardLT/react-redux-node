@@ -4,13 +4,20 @@
  * Time: 下午6:05
  */
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import Swiper from 'react-id-swiper';
 const title = require('../../img/index/font-10.png');
 const exp1 = require('../../img/expert/e1.jpg');
 const exp2 = require('../../img/expert/e2.jpg');
 
-class expert extends Component {
+class Expert extends Component {
+    constructor(props) {
+        super(props)
+    }
+
     render() {
+        let expertInfo = this.props.menus.expertInfo;
+
         const paras = {
             prevButton:'.swiper-button-prev',
             nextButton:'.swiper-button-next',
@@ -22,7 +29,8 @@ class expert extends Component {
             simulateTouch: false
         }
 
-        return (
+        return expertInfo?
+        (
             <div className="box">
                 <div className="container">
                     <div className="tc">
@@ -32,134 +40,36 @@ class expert extends Component {
                     <div className="expert-box">
                         <div className="expert-slide">
                             <Swiper {...paras}>
-                                <a href="#">
-                                    <div className="swiper-slide ss-one">
-                                        <div className="e-card">
-                                            <div className="e-img">
-                                                <img src={exp1} alt="" className="ex-img" />
-                                                <div className="fb transition">
-                                                    <h3>如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退,最多被消费</h3>
-                                                </div>
+                            {
+                                expertInfo.map((item, index) => {
+                                    return (
+                                        <a href="#" id={item.id} key={index}>
+                                            <div className="swiper-slide ss-one">                                      
+                                                <div className="e-card">
+                                                   <div className="e-img">
+                                                        <img src={exp1} alt="" className="ex-img" />
+                                                        <div className="fb transition">
+                                                            <h3>{item.summary}</h3>
+                                                        </div>
+                                                    </div>
+                                                    <div className="e-name">{item.name}</div>
+                                                    <div className="e-title overflow">{item.title}</div>
+                                                    <div className="e-tab overflow">
+                                                        {
+                                                            item.tag.map((subMenu, index) =>{
+                                                                return (
+                                                                    <span className="blue" key={index}>{subMenu+" "}</span>
+                                                                )
+
+                                                            })                                                    
+                                                        }                                                        
+                                                    </div>
+                                                </div>                                       
                                             </div>
-                                            <div className="e-name">舒伯特</div>
-                                            <div className="e-title overflow">华侨城ITD丶国资委委员</div>
-                                            <div className="e-tab overflow">
-                                                <span className="blue">互联网</span>
-                                                <span className="blue">产品经理</span>
-                                                <span className="blue">创业营销</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="">
-                                    <div className="swiper-slide">
-                                        <div className="e-card">
-                                            <div className="e-img">
-                                                <img src={exp2} alt="" className="ex-img" />
-                                                <div className="fb transition">
-                                                    <h3>如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退</h3>
-                                                </div>
-                                            </div>
-                                            <div className="e-name">
-                                                <span>舒伯特</span>
-                                                <span className="e-star">
-                                                <i className="iconfont icon-star i-star"></i>
-                                                <span className="i-star">五星专家</span>
-                                            </span>
-                                            </div>
-                                            <div className="e-title overflow">华侨城ITD丶国资委委员</div>
-                                            <div className="e-tab overflow">
-                                                <span className="blue">互联网</span>
-                                                <span className="blue">产品经理</span>
-                                                <span className="blue">创业营销</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#">
-                                    <div className="swiper-slide">
-                                        <div className="e-card">
-                                            <div className="e-img">
-                                                <img src={exp1} alt="" className="ex-img" />
-                                                <div className="fb transition">
-                                                    <h3>如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退</h3>
-                                                </div>
-                                            </div>
-                                            <div className="e-name">
-                                                <span>舒伯特</span>
-                                                <span className="e-star">
-                                                <i className="iconfont icon-star i-star"></i>
-                                                <span className="i-star">五星专家</span>
-                                            </span>
-                                            </div>
-                                            <div className="e-title overflow">华侨城ITD丶国资委委员</div>
-                                            <div className="e-tab overflow">互联网,产品经理,创业营销</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#">
-                                    <div className="swiper-slide">
-                                        <div className="e-card">
-                                            <div className="e-img">
-                                                <img src={exp2} alt="" className="ex-img" />
-                                                <div className="fb transition">
-                                                    <h3>如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退</h3>
-                                                </div>
-                                            </div>
-                                            <div className="e-name">
-                                                <span>舒伯特</span>
-                                                <span className="e-star">
-                                                <i className="iconfont icon-star i-star"></i>
-                                                <span className="i-star">五星专家</span>
-                                            </span>
-                                            </div>
-                                            <div className="e-title overflow">华侨城ITD丶国资委委员</div>
-                                            <div className="e-tab overflow">
-                                                <span className="blue">互联网</span>
-                                                <span className="blue">产品经理</span>
-                                                <span className="blue">创业营销</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#">
-                                    <div className="swiper-slide">
-                                        <div className="e-card">
-                                            <div className="e-img">
-                                                <img src={exp1} alt="" className="ex-img" />
-                                                <div className="fb transition">
-                                                    <h3>如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退</h3>
-                                                </div>
-                                            </div>
-                                            <div className="e-name">舒伯特</div>
-                                            <div className="e-title overflow">华侨城ITD丶国资委委员</div>
-                                            <div className="e-tab overflow">
-                                                <span className="blue">互联网</span>
-                                                <span className="blue">产品经理</span>
-                                                <span className="blue">创业营销</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#">
-                                    <div className="swiper-slide">
-                                        <div className="e-card">
-                                            <div className="e-img">
-                                                <img src={exp2} alt="" className="ex-img" />
-                                                <div className="fb transition">
-                                                    <h3>如果世界漆黑,其实我很美,在爱情里面进退,最多被消费,如果世界漆黑,其实我很美,在爱情里面进退</h3>
-                                                </div>
-                                            </div>
-                                            <div className="e-name">舒伯特</div>
-                                            <div className="e-title overflow">华侨城ITD丶国资委委员</div>
-                                            <div className="e-tab overflow">
-                                                <span className="blue">互联网</span>
-                                                <span className="blue">产品经理</span>
-                                                <span className="blue">创业营销</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
+                                        </a>
+                                    )    
+                                })
+                            }     
                             </Swiper>
                             {/*<div className="swiper-button-next"></div>*/}
                             {/*<div className="swiper-button-prev swiper-button-disabled"></div>*/}
@@ -168,11 +78,16 @@ class expert extends Component {
                     <div className="publish-demand btn find">发现更多专家</div>
                 </div>
             </div>
-        );
+        ): <div></div>;
     }
 }
 
-expert.propTypes = {};
-expert.defaultProps = {};
+const mapStateToProps = (state) => {
+    return state;
+}
 
-export default expert;
+let wrapedExpert = connect(mapStateToProps)(Expert);
+//expert.propTypes = {};
+//expert.defaultProps = {};
+
+export default wrapedExpert;
