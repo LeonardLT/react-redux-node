@@ -27,6 +27,14 @@ class OverseaReg extends Component {
         let name = this.refs.regOutName.value;
         let password = this.refs.regOutPassword.value;
 
+        if(phone.length === 0) {
+            document.getElementById('phoneOut-sug').style.display = "block";
+
+            return;
+        } else {
+            document.getElementById('phoneOut-sug').style.display = "none";
+        }
+
         if(name.length === 0) {
             document.getElementById('nameOut-sug').style.display = "block";
 
@@ -97,7 +105,7 @@ class OverseaReg extends Component {
                                 <form onSubmit={ e => this.submitRegisterOutForm(e) }>
                                     <div className="input-box">
                                         <input type="text" className="input-text transition2" placeholder="手机号" disabled="disabled" ref="regOutPhone"/>
-                                        <div className="input-info input-phone" id="phoneOut-sug">请输入正确的11位手机号码</div>
+                                        <div className="input-info input-phone" id="phoneOut-sug">请确认手机号正确</div>
                                     </div>
                                     <div className="input-box">
                                         <input type="text" className="input-text transition2" placeholder="姓名" ref="regOutName"/>
