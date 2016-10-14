@@ -138,7 +138,7 @@ class Register extends Component {
                                     </div>
                                     <div className="input-agreement">
                                         <label className="radio-box">
-                                            <input type="checkbox" name="-1" id="radio-1-5" />
+                                            <input type="checkbox" name="-1" id="radio-1-5" className="readAndAgree"/>
                                             <label htmlFor="radio-1-5" className="checkbox-label"></label>
                                             <span>已阅读并同意</span>
                                         </label>

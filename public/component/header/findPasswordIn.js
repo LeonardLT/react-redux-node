@@ -60,12 +60,6 @@ class FindPasswordIn extends Component {
             .post('/api/findPword')
             .send(sendData)
             .end((err, res) => {
-                dispatch(
-                    {
-                        type: "findPword",
-                        data: res.body
-                    }
-                );
 
                 if(res.body.status === 1) {
                     document.getElementById('model').style.display = "none";
@@ -142,10 +136,6 @@ class FindPasswordIn extends Component {
     }
 }
 
-//FindPasswordIn.propTypes = {};
-//FindPasswordIn.defaultProps = {};
 
-const wrapedHeader = connect()(FindPasswordIn);
-
-export default wrapedHeader;
+export default FindPasswordIn;
 

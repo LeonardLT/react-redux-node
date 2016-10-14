@@ -85,6 +85,23 @@ class Login extends Component {
         e.stopPropagation();
         e.preventDefault();
 
+        let rootEle = document.getElementById('model');
+        let allInputEle = rootEle.getElementsByTagName("input");
+
+        [].map.call(allInputEle, item => {
+            item.value = "";
+        });
+
+        let tips = rootEle.getElementsByClassName("input-info");
+        [].map.call(tips, item => {
+            item.style.display = 'none';
+        });
+
+        let agree = rootEle.getElementsByClassName("readAndAgree");
+        [].map.call(agree, item => {
+            item.checked=false;
+        });
+
         document.getElementById('model').style.display = 'none';
         document.getElementById('login').style.display = 'none';
         document.getElementById('f-p-1').style.display = 'none';
@@ -123,11 +140,11 @@ class Login extends Component {
                                                     </select>
                                                 </div>
                                                 <div className="input-box">
-                                                    <input type="text" className="input-text transition2" placeholder="手机号" ref="phone"/>
+                                                    <input type="text" className="input-text transition2" placeholder="手机号" id="phone" ref="phone"/>
                                                     <div className="input-info input-phone" id="phone-sug" ref="phone-sug">请输入正确的11位手机号码</div>
                                                 </div>
                                                 <div className="input-box">
-                                                    <input type="password" className="input-text transition2" placeholder="密码" ref="password"/>
+                                                    <input type="password" className="input-text transition2" placeholder="密码" id="password" ref="password"/>
                                                     <div className="input-info input-password" id="pass-sug">请输入大于6位小于20位的密码</div>
                                                     <div className="input-info input-password" id="login-failed">请输入正确的账号信息</div>
                                                 </div>
