@@ -9,7 +9,7 @@ module.exports = [
         title: '锦囊专家'
     },
     {
-        name: 'admin',
-        title: '锦囊管理'
+        name: 'expertCenter',
+        title: 'expertCenter'
     }
 ];
