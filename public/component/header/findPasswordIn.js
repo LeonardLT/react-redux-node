@@ -52,8 +52,10 @@ class FindPasswordIn extends Component {
             document.getElementById('findPword-sug').style.display = "none";
         }
 
+        let nationType = 0;
+
         const sendData = {
-            data: [ phone, password, vcode ]
+            data: [ phone, password, nationType, vcode ]
         }
 
         request
