@@ -53,7 +53,11 @@ class Login extends Component {
         }
 
         const sendData = {
-            data: [ code, phone, password ]
+            params: {
+                nationType: code,
+                username: phone,
+                password: password
+            }
         }
 
         request

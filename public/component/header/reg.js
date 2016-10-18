@@ -74,7 +74,11 @@ class Register extends Component {
 
         let nationType = 0;
         const sendData = {
-            data: [ phone, password, name, nationType, vcode ]
+            username: phone,
+            password: password,
+            name: name,
+            nationType: nationTypem,
+            vcode: vcode
         }
 
         request
