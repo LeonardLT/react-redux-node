@@ -7,6 +7,8 @@ import React, {Component} from 'react';
 const titleImg = require('../../img/expertDetail/3.png');
 const consultant = require('../../img/expertDetail/11.png');
 const training = require('../../img/expertDetail/10.png');
+const img3 = require('../../img/expertDetail/12.png');
+const img2 = require('../../img/expertDetail/13.png');
 import { connect } from 'react-redux';
 
 class ExpertServices extends Component {
@@ -25,7 +27,6 @@ class ExpertServices extends Component {
     }
 
     render() {
-        console.log(this.props.toggle);
         return (
             <div className="container">
                 <div className="tc mt30">
@@ -106,7 +107,7 @@ class ExpertServices extends Component {
                         <i className="iconfont icon-down1"></i>
                     </div>
                     <div className="mark">
-                        <img src="../img/expertDetail/13.png" alt="" />
+                        <img src={img2} alt="" />
                     </div>
                 </div>
 
@@ -133,7 +134,7 @@ class ExpertServices extends Component {
                         <i className="iconfont icon-down1"></i>
                     </div>
                     <div className="mark">
-                        <img src="../img/expertDetail/12.png" alt="" />
+                        <img src={img3} alt="" />
                     </div>
                 </div>
             </div>
