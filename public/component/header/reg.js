@@ -75,9 +75,9 @@ class Register extends Component {
         let nationType = 0;
         const sendData = {
             username: phone,
-            password: password,
+            password: hex_md5(password),
             name: name,
-            nationType: nationTypem,
+            nationType: nationType,
             vcode: vcode
         }
 

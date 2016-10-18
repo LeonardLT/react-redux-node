@@ -54,9 +54,9 @@ class Login extends Component {
 
         const sendData = {
             params: {
-                nationType: code,
+                nationCode: code,
                 username: phone,
-                password: password
+                password: hex_md5(password)
             }
         }
 

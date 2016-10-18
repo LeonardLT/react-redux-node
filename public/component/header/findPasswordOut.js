@@ -6,6 +6,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import request from 'superagent';
+import { hex_md5 } from '../../js/md5';
 require('../../styles/register.css')
 
 class FindPasswordOut extends Component {
@@ -37,7 +38,12 @@ class FindPasswordOut extends Component {
         let vcode = '';
 
         const sendData = {
-            data: [ phone, password, nationType, vcode ]
+            params: {
+                username: phone,
+                password: hex_md5(password),
+                nationType: nationType,
+                vcode: vcode
+            }
         }
 
         request

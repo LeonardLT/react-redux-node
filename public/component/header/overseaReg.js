@@ -7,6 +7,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import Login from './login'
 import request from 'superagent';
+import { hex_md5 } from '../../js/md5';
 require('../../styles/register.css')
 
 class OverseaReg extends Component {
@@ -63,7 +64,11 @@ class OverseaReg extends Component {
         let vcode = '';
         
         const sendData = {
-            data: [ phone, password, name, nationType, vcode ]
+            username: phone,
+            password: hex_md5(password),
+            name: name,
+            nationType: nationType,
+            vcode: vcode
         }
 
         request

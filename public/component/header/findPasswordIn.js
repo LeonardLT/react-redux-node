@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import Login from './login'
 import FindPassOut from './findPasswordOut'
 import request from 'superagent';
+import { hex_md5 } from '../../js/md5';
 require('../../styles/register.css')
 
 class FindPasswordIn extends Component {
@@ -55,7 +56,12 @@ class FindPasswordIn extends Component {
         let nationType = 0;
 
         const sendData = {
-            data: [ phone, password, nationType, vcode ]
+            params: {
+                username: phone,
+                password: hex_md5(password),
+                nationType: nationType,
+                vcode: vcode
+            }
         }
 
         request
