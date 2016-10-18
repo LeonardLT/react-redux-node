@@ -71,7 +71,6 @@ class Comment extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         listData: state.listData
     }
