@@ -720,6 +720,23 @@ body {
 
     display: none;
 }
+.input-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 110px;
+    background-color: #f65131;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+
+    transition: opacity ease .3s;
+}
+.input-btn:hover {
+    opacity: .9;
+}
 
 .i-btn {
     width: 100%;
