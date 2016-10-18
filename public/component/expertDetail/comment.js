@@ -43,11 +43,11 @@ class Comment extends Component {
                             <div className="expert-info clearfix" key={index}>
                                 <div className="flex g-line ptb40">
                                     <div className="expert-img">
-                                        <img src="" alt="" />
+                                        <img src={img2} alt="" />
                                     </div>
                                     <div className="expert-intro mt13">
                                         <h1 className="bold">
-                                            {item.name}
+                                            {item.memberName}
                                             <span className="mini-font">
                                     <i className="iconfont icon-heart"></i>
                                     <span>{item.commentTime}</span>
@@ -58,6 +58,7 @@ class Comment extends Component {
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         )
                     })
                 }
@@ -70,6 +71,7 @@ class Comment extends Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state);
     return {
         listData: state.listData
     }

@@ -11,6 +11,7 @@ import FindPassIn from './findPasswordIn'
 import FindPassOut from './findPasswordOut'
 import Register from './reg'
 import OverRegister from './overseaReg'
+import { hex_md5 } from '../../js/md5';
 
 import request from 'superagent';
 

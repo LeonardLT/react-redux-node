@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import Login from './login'
 import OverRegister from './overseaReg'
 import request from 'superagent';
+import { hex_md5 } from '../../js/md5';
 require('../../styles/register.css')
 
 
