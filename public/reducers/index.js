@@ -5,10 +5,12 @@
  */
 import { combineReducers } from 'redux'
 import { menus, login, reg } from './menus'
+import { toggle } from './toggle'
 
 const reducers = combineReducers({
     menus,
     login,
+    toggle,
     reg,
 })
 
