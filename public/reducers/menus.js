@@ -20,12 +20,3 @@ export const login = (state = {}, action) => {
             return state
     }
 }
-
-export const reg = (state = {}, action) => {
-    switch (action.type) {
-        case 'reg':
-            return action.data
-        default :
-            return state
-    }
-}
