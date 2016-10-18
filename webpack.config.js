@@ -14,7 +14,7 @@ module.exports = {
   // ],
   entry: {
     index: "./public/component/index/index",
-    expertCenter: "./public/component/expertCenter/index"
+    expertDetail: "./public/component/expertDetail/index"
   },
   output: {
     path: path.join(__dirname, '/assets/'),
