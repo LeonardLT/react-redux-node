@@ -19,8 +19,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, '/assets/'),
     publicPath: '/',
-    filename: '[name]/entry.js',
-    chunkFilename: "[id].bundle.js"
+    filename: '[name].entry.js'
   },
   module: {
     loaders: [
