@@ -5,12 +5,13 @@
  */
 import { combineReducers } from 'redux'
 import { login } from '../login'
-import { toggle, listData } from './expert'
+import { toggle, listData, expert } from './expert'
 
 const reducers = combineReducers({
     login,
     toggle,
-    listData
+    listData,
+    expert
 })
 
 export default reducers;

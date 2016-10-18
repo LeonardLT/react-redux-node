@@ -28,3 +28,12 @@ export const toggle = (state = [], action) => {
             return state
     }
 }
+
+export const expert = (state = {}, action) => {
+    switch (action.type) {
+        case 'expertDetailLoaded':
+            return action.data
+        default :
+            return state
+    }
+}

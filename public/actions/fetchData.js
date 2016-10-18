@@ -15,3 +15,18 @@ export const receiveData = (page) => {
             })
     }
 }
+
+export const loadExpertData = (id) => {
+    return dispatch => {
+        request
+            .get(`/api/expertDetail/${id}`)
+            .end((err,res) => {
+                if(err) window.location.href = "https://www.baidu.com";
+
+                dispatch({
+                    type: 'expertDetailLoaded',
+                    data: res.body
+                })
+            })
+    }
+}
