@@ -1,6 +1,6 @@
 
 
-export const listData = (state = { page: 1, isFetching: false, list: [] }, action) => {
+export const listData = (state = { page: 1, list: [] }, action) => {
 	switch(action.type) {
 		case 'RECEIVE_DATA':
 		  	return {
