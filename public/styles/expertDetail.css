@@ -148,6 +148,9 @@ h2 {
   margin-bottom: 10px;
   border-bottom: 1px solid rgba(180, 180, 180, 0.4);
 }
+.topic-content-toggle {
+  max-height: 100%;
+}
 .topic-content .fold {
   position: absolute;
   top: 70px;

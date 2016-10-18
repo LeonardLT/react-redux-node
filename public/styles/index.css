@@ -15,7 +15,7 @@
 }
 
 /*.swiper-scrollbar {*/
-    /*display: none!important;*/
+/*display: none!important;*/
 /*}*/
 
 .swiper-pagination-bullet {
@@ -143,7 +143,7 @@
     height: 100%;
     margin: 0;
     -moz-box-sizing: border-box;
-         box-sizing: border-box;
+    box-sizing: border-box;
     padding-top: 10px;
 }
 
@@ -217,7 +217,7 @@
     overflow: hidden;
     margin: 0 auto;
     -moz-box-sizing: border-box;
-         box-sizing: border-box;
+    box-sizing: border-box;
 }
 .e-img {
     width: 230px;
@@ -240,8 +240,8 @@
 .e-desc {
     background: rgb(0, 188, 212);
     -webkit-transform: rotateY(-180deg);
-       -moz-transform: rotateY(-180deg);
-            transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
     z-index: 1;
 }
 
@@ -282,10 +282,10 @@
 .animated {
     -webkit-animation-duration: 1s;
     -moz-animation-duration: 1s;
-         animation-duration: 1s;
+    animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
-         animation-fill-mode: both;
+    animation-fill-mode: both;
 }
 
 .e-img img {
@@ -316,26 +316,26 @@
 }
 
 .swiper-button-prev {
-    background-image: url("../img/expert/left.png")!important;
-    background-size: 32px!important;
-    height: 44px!important;
-    width: 44px!important;
-    left: -40px!important;
-    top: 150px!important;
+    background-image: url("../img/expert/left.png");
+    background-size: 32px;
+    height: 44px;
+    width: 44px;
+    left: -40px;
+    top: 150px;
 }
 .swiper-button-prev:hover {
-    background-image: url("../img/expert/left-2.png")!important;
+    background-image: url("../img/expert/left-2.png");
 }
 .swiper-button-next {
-    background-image: url("../img/expert/right-2.png")!important;
-    background-size: 32px!important;
-    height: 44px!important;
-    width: 44px!important;
-    right: -40px!important;
-    top: 150px!important;
+    background-image: url("../img/expert/right-2.png");
+    background-size: 32px;
+    height: 44px;
+    width: 44px;
+    right: -40px;
+    top: 150px;
 }
 .swiper-button-next:hover {
-    background-image: url("../img/expert/right.png")!important;
+    background-image: url("../img/expert/right.png");
 }
 
 .find {

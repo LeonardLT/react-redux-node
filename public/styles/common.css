@@ -16,7 +16,6 @@ body {
     margin: 0;
     color: #2c3035;
     font-size: 14px;
-    font-family: "Microsoft Yahei", Helvetica, STHeiTi, sans-serif;
     background-color: #ffffff;
 }
 
@@ -346,7 +345,7 @@ body {
 }
 
 /*.nav ul .nav-active a {*/
-    /*border-bottom: 4px solid #f65131;*/
+/*border-bottom: 4px solid #f65131;*/
 /*}*/
 .nav ul .nav-active a:after {
     content: "";
@@ -362,7 +361,7 @@ body {
 }
 
 /*.nav .h-nav-list .nav-li:hover a {*/
-    /*border-bottom: 4px solid #f65131;*/
+/*border-bottom: 4px solid #f65131;*/
 /*}*/
 .nav .h-nav-list .nav-li:hover a:after {
     content: "";
@@ -468,7 +467,7 @@ body {
 }
 
 .f-phone {
-    margin-right: 45px;
+    margin-right: 40px;
 }
 
 .f-code {
@@ -534,9 +533,9 @@ body {
     border-top-width: 0px;
     border-right-width: 0px;
     -webkit-transform: rotate(-45deg) scale(0);
-       -moz-transform: rotate(-45deg) scale(0);
-        -ms-transform: rotate(-45deg) scale(0);
-            transform: rotate(-45deg) scale(0);
+    -moz-transform: rotate(-45deg) scale(0);
+    -ms-transform: rotate(-45deg) scale(0);
+    transform: rotate(-45deg) scale(0);
     /*滚落进入*/
     /*transform: translate3d(0,-26px,0) scale(0);*/
     /*抖动进入*/
@@ -777,8 +776,8 @@ body {
     width: 46px;
     height: 45px;
     -webkit-animation: loading 1.5s infinite ease;
-       -moz-animation: loading 1.5s infinite ease;
-            animation: loading 1.5s infinite ease;
+    -moz-animation: loading 1.5s infinite ease;
+    animation: loading 1.5s infinite ease;
 }
 
 .i-red {
@@ -826,12 +825,12 @@ body {
     font-size: 12px;
     width: 80px;
     height: 19px;
+    line-height: 13px;
     background-size: 100%;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 3px 0 0 4px;
     vertical-align: text-top;
-
 }
 .i-star {
     font-size: 12px;
