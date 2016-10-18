@@ -13,7 +13,7 @@ class Category extends Component {
 
     render() {
         let menuData = this.props.menus.menu;
-        //
+
         return menuData ? (
             <div className="container pos-rel mt">
                 <div className="cate-container">

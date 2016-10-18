@@ -81,7 +81,7 @@ class Register extends Component {
             .end((err, res) => {
                 dispatch(
                     {
-                        type: "reg",
+                        type: "login",
                         data: res.body
                     }
                 );

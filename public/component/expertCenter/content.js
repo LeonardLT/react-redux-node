@@ -6,48 +6,20 @@
 import React from 'react';
 import Header from '../header/header';
 import Footer from '../footer/footer';
+import ExpertCard from './expertCard';
+import ExpertServices from './expertServices';
 
-class Hello extends React.Component {
+class Content extends React.Component {
     render() {
-        const red = {
-            display: 'inline-block',
-            color: 'blue',
-            fontSize: '20px'
-        };
 
         return (
         <div className="">
             <Header></Header>
-            <div className="container">
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                admin test.....
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-            </div>
+            <ExpertCard></ExpertCard>
+            <ExpertServices></ExpertServices>
             <Footer></Footer>
         </div>)
     }
 }
 
-export default Hello;
+export default Content;

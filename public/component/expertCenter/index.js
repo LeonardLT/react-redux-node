@@ -1,27 +1,24 @@
 // import $ from 'jquery';
-import Hello from './mana';
+import Content from './content';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import reducers from '../../reducers'
-import { loadMenus } from '../../actions/menus'
 
 require('../../styles/common.css');
-require('../../styles/swiper.min.css');
-require('../../styles/index.css');
+require('../../styles/expertDetail.css');
+
 
 const store = createStore(
     reducers,
-    applyMiddleware(thunk) //redux的原生方法,作用是将所有中间件组成一个数组,依次执行
+    applyMiddleware(thunk)
 );
-
-store.dispatch(loadMenus);
 
 ReactDOM.render(
     <Provider store={store}>
-        <Hello />
+        <Content />
     </Provider>,
     document.getElementById("content")
 );
