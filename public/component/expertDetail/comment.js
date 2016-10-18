@@ -4,11 +4,28 @@
  * Time: 下午12:17
  */
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+// import { fetchData } from '../../reducers/fetchData.js';
 const img1 = require('../../img/expertDetail/4.png');
 const img2 = require('../../img/expertDetail/2.jpg');
 
 
 class Comment extends Component {
+
+    constructor(props) {
+        super(props)
+        this.fetchMoreData = this.fetchMoreData.bind(this);
+    }
+
+    fetchMoreData(page){
+        const { dispatch, listData } = this.props;
+
+        dispatch(fetchData(page));
+        page++;
+        console.log(listData);
+    }
+    
+
     render() {
         return (
             <div className="container">
@@ -39,11 +56,24 @@ class Comment extends Component {
                     </div>
                 </div>
                 <div className="see-more mtb40">
-                    <a>查看更多</a>
+                    <a onClick={ (e) => this.fetchMoreData(2) }>查看更多</a>
                 </div>
             </div>
         );
     }
 }
 
-export default Comment;
+const mapStateToProps = (state) => {
+    return {
+        listData: state.listData
+    }
+}
+
+const WrapedComment = connect(mapStateToProps)(Comment);
+export default WrapedComment;
+
+// export default connect(state => {
+//   return {
+//     listData: state.listData
+//   }
+// })(Comment);
