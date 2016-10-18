@@ -11,5 +11,9 @@ module.exports = [
     {
         name: 'expertDetail',
         title: 'expertDetail'
+    },
+    {
+        name: 'expertCenter',
+        title: 'expertCenter'
     }
 ];
