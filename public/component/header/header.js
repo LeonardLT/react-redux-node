@@ -5,10 +5,10 @@
  */
 import React, { Component } from 'react';
 import logo from '../../img/index/logo.png';
-require('../../less/form.less');
 import Login from './login';
 import Register from './reg';
 import { connect } from 'react-redux'
+require('../../less/form.less');
 
 class Header extends Component {
     constructor(props) {
