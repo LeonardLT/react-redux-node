@@ -9,7 +9,8 @@ import Footer from '../footer/footer';
 import ExpertCard from './expertCard';
 import ExpertServices from './expertServices';
 import Comment from './comment';
-
+import About from './about';
+import MicroClass from './microClass';
 
 class Content extends React.Component {
     render() {
@@ -19,6 +20,8 @@ class Content extends React.Component {
             <Header></Header>
             <ExpertCard></ExpertCard>
             <ExpertServices></ExpertServices>
+            <About></About>
+            <MicroClass></MicroClass>
             <Comment></Comment>
             <Footer></Footer>
         </div>)
