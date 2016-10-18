@@ -71,8 +71,9 @@ class Register extends Component {
             document.getElementById('agreement-sug').style.display = "none";
         }
 
+        let nationType = 0;
         const sendData = {
-            data: [ phone, password, name, vcode ]
+            data: [ phone, password, name, nationType, vcode ]
         }
 
         request
