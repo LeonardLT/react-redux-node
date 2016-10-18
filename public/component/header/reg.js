@@ -79,14 +79,14 @@ class Register extends Component {
             .post('/api/reg')
             .send(sendData)
             .end((err, res) => {
-                dispatch(
-                    {
-                        type: "login",
-                        data: res.body
-                    }
-                );
-
+                
                 if(res.body.status === 1) {
+                    dispatch(
+                        {
+                            type: "login",
+                            data: res.body
+                        }
+                    );
                     document.getElementById('model').style.display = "none";
                 } else {
                     document.getElementById('reg-failed').style.display = "none";

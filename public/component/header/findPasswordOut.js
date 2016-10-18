@@ -33,12 +33,15 @@ class FindPasswordOut extends Component {
             document.getElementById('findPwordOut-sug').style.display = "none";
         }
 
+        let nationType = 1;
+        let vcode = '';
+
         const sendData = {
-            data: [ phone, password ]
+            data: [ phone, password, nationType, vcode ]
         }
 
         request
-            .post('/api/findPwordOut')
+            .post('/api/findPword')
             .send(sendData)
             .end((err, res) => {
 

@@ -60,23 +60,24 @@ class OverseaReg extends Component {
         }
 
         let nationType = 1;
+        let vcode = '';
         
         const sendData = {
-            data: [ phone, password, name, nationType ]
+            data: [ phone, password, name, nationType, vcode ]
         }
 
         request
             .post('/api/reg')
             .send(sendData)
             .end((err, res) => {
-                dispatch(
-                    {
-                        type: "reg",
-                        data: res.body
-                    }
-                );
-
+                
                 if(res.body.status === 1) {
+                    dispatch(
+                        {
+                            type: "login",
+                            data: res.body
+                        }
+                    );
                     document.getElementById('model').style.display = "none";
                 } else {
                     document.getElementById('regOut-failed').style.display = "none";
