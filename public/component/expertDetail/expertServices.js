@@ -60,7 +60,6 @@ class ExpertServices extends Component {
                     </div>
                 </div>
 
-
                 <div className="expert-card pos-rel mb30">
                     <h1 className="bold">工业4.0-标准化管理体系建设</h1>
                     <div className="topic-price">
@@ -111,7 +110,6 @@ class ExpertServices extends Component {
                     </div>
                 </div>
 
-
                 <div className="expert-card pos-rel mb30">
                     <h1 className="bold">工业4.0-标准化管理体系建设</h1>
                     <div className="topic-price">
@@ -142,8 +140,6 @@ class ExpertServices extends Component {
     }
 }
 
-// expertServices.propTypes = {};
-// expertServices.defaultProps = {};
 const mapStateToProps = (state) => {
     return state;
 }
