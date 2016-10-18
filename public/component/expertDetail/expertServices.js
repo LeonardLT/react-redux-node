@@ -46,13 +46,15 @@ class ExpertServices extends Component {
                             <p>
                                 移动互联网时代，编辑、内容运营或者叫新媒体运营，工作的性质和作用都在发生变化，作为一名合格的编辑、运营需要掌握哪些技能？如何提升自己在媒体行业中的竞争力？转型能有哪些出路？各有什么利弊？
                                 移动互联网时代，编辑、内容运营或者叫新媒体运营，工作的性质和作用都在发生变化
+                                从独当一面的专题编辑，到深入一线的采访记者，再到真枪实弹的运营负责人，我可以与你分享媒体、内容运营行业的变化，帮助你在职场上获得成长。
+                                移动互联网时代，编辑、内容运营或者叫新媒体运营，工作的性质和作用都在发生变化
+                                从独当一面的专题编辑，到深入一线的采访记者，再到真枪实弹的运营负责人，我可以与你分享媒体、内容运营行业的变化，帮助你在职场上获得成长。
                             </p>
-                            <p>从独当一面的专题编辑，到深入一线的采访记者，再到真枪实弹的运营负责人，我可以与你分享媒体、内容运营行业的变化，帮助你在职场上获得成长。</p>
                         </div>
-                        <div className="fold"></div>
+                        <div className={"fold" + (this.props.toggle[0] ? " none" : "")}></div>
                     </div>
                     <div className="btn mt30">立即预约</div>
-                    <div className="toggle-btn" onClick={(e) => this.toggleFont(0)}>
+                    <div className={"toggle-btn" + (this.props.toggle[0] ? " toggle-btn-on" : "")} onClick={(e) => this.toggleFont(0)}>
                         <i className="iconfont icon-down1"></i>
                     </div>
                     <div className="mark">
@@ -74,10 +76,10 @@ class ExpertServices extends Component {
                             </p>
                             <p>从独当一面的专题编辑，到深入一线的采访记者，再到真枪实弹的运营负责人，我可以与你分享媒体、内容运营行业的变化，帮助你在职场上获得成长。</p>
                         </div>
-                        <div className="fold"></div>
+                        <div className={"fold" + (this.props.toggle[1] ? " none" : "")}></div>
                     </div>
                     <div className="btn mt30">立即预约</div>
-                    <div className="toggle-btn" onClick={(e) => this.toggleFont(1)}>
+                    <div className={"toggle-btn" + (this.props.toggle[1] ? " toggle-btn-on" : "")} onClick={(e) => this.toggleFont(1)}>
                         <i className="iconfont icon-down1"></i>
                     </div>
                     <div className="mark">
@@ -91,7 +93,7 @@ class ExpertServices extends Component {
                         <span className="price">价格面议</span>
                         <span className="time">/次</span>
                     </div>
-                    <div className="topic-content">
+                    <div className={"topic-content" + (this.props.toggle[2] ? " topic-content-toggle" : "")}>
                         <div className="topic-intro">
                             <p>
                                 移动互联网时代，编辑、内容运营或者叫新媒体运营，工作的性质和作用都在发生变化，作为一名合格的编辑、运营需要掌握哪些技能？如何提升自己在媒体行业中的竞争力？转型能有哪些出路？各有什么利弊？
@@ -99,10 +101,10 @@ class ExpertServices extends Component {
                             </p>
                             <p>从独当一面的专题编辑，到深入一线的采访记者，再到真枪实弹的运营负责人，我可以与你分享媒体、内容运营行业的变化，帮助你在职场上获得成长。</p>
                         </div>
-                        <div className="fold"></div>
+                        <div className={"fold" + (this.props.toggle[2] ? " none" : "")}></div>
                     </div>
                     <div className="btn mt30">立即预约</div>
-                    <div className="toggle-btn">
+                    <div className={"toggle-btn" + (this.props.toggle[2] ? " toggle-btn-on" : "")} onClick={(e) => this.toggleFont(2)}>
                         <i className="iconfont icon-down1"></i>
                     </div>
                     <div className="mark">
@@ -117,7 +119,7 @@ class ExpertServices extends Component {
                         <span className="price">888</span>
                         <span className="time">/次</span>
                     </div>
-                    <div className="topic-content">
+                    <div className={"topic-content" + (this.props.toggle[3] ? " topic-content-toggle" : "")}>
                         <div className="topic-intro">
                             <p>
                                 移动互联网时代，编辑、内容运营或者叫新媒体运营，工作的性质和作用都在发生变化，作为一名合格的编辑、运营需要掌握哪些技能？如何提升自己在媒体行业中的竞争力？转型能有哪些出路？各有什么利弊？
@@ -125,10 +127,10 @@ class ExpertServices extends Component {
                             </p>
                             <p>从独当一面的专题编辑，到深入一线的采访记者，再到真枪实弹的运营负责人，我可以与你分享媒体、内容运营行业的变化，帮助你在职场上获得成长。</p>
                         </div>
-                        <div className="fold"></div>
+                        <div className={"fold" + (this.props.toggle[3] ? " none" : "")}></div>
                     </div>
                     <div className="btn mt30">立即预约</div>
-                    <div className="toggle-btn">
+                    <div className={"toggle-btn" + (this.props.toggle[3] ? " toggle-btn-on" : "")} onClick={(e) => this.toggleFont(3)}>
                         <i className="iconfont icon-down1"></i>
                     </div>
                     <div className="mark">

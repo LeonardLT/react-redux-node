@@ -148,6 +148,9 @@ h2 {
   margin-bottom: 10px;
   border-bottom: 1px solid rgba(180, 180, 180, 0.4);
 }
+.topic-content-toggle {
+  max-height: 300px;
+}
 .topic-content .fold {
   position: absolute;
   top: 70px;
@@ -176,6 +179,16 @@ h2 {
   cursor: pointer;
   font-size: 36px;
   color: #b1b1b1;
+  display: block;
+  -webkit-transition: all ease .8s;
+  -moz-transition: all ease .8s;
+  transition: all ease .8s;
+}
+.toggle-btn-on i {
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 .toggle-btn i:hover {
   color: #f65131;

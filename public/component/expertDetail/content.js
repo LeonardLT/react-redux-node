@@ -8,6 +8,8 @@ import Header from '../header/header';
 import Footer from '../footer/footer';
 import ExpertCard from './expertCard';
 import ExpertServices from './expertServices';
+import Comment from './comment';
+
 
 class Content extends React.Component {
     render() {
@@ -17,6 +19,7 @@ class Content extends React.Component {
             <Header></Header>
             <ExpertCard></ExpertCard>
             <ExpertServices></ExpertServices>
+            <Comment></Comment>
             <Footer></Footer>
         </div>)
     }
