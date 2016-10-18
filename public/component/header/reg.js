@@ -77,7 +77,7 @@ class Register extends Component {
             username: phone,
             password: password,
             name: name,
-            nationType: nationTypem,
+            nationType: nationType,
             vcode: vcode
         }
 

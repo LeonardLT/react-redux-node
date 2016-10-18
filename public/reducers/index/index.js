@@ -4,15 +4,12 @@
  * Time: 下午8:18
  */
 import { combineReducers } from 'redux'
-import { menus, login } from './menus'
-import { toggle } from './toggle'
-import { listData } from './fetchData'
+import { login } from '../login'
+import { menus } from './menus'
 
 const reducers = combineReducers({
     menus,
-    login,
-    toggle,
-    listData
+    login
 })
 
 export default reducers;
