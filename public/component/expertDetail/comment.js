@@ -5,7 +5,7 @@
  */
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-// import { fetchData } from '../../reducers/fetchData.js';
+import { receiveData } from '../../actions/fetchData';
 const img1 = require('../../img/expertDetail/4.png');
 const img2 = require('../../img/expertDetail/2.jpg');
 
@@ -17,12 +17,14 @@ class Comment extends Component {
         this.fetchMoreData = this.fetchMoreData.bind(this);
     }
 
-    fetchMoreData(page){
+    fetchMoreData(){
         const { dispatch, listData } = this.props;
+        let page = listData.page;
 
-        dispatch(fetchData(page));
         page++;
-        console.log(listData);
+
+        dispatch(receiveData(page));
+        
     }
     
 
@@ -56,7 +58,7 @@ class Comment extends Component {
                     </div>
                 </div>
                 <div className="see-more mtb40">
-                    <a onClick={ (e) => this.fetchMoreData(2) }>查看更多</a>
+                    <a onClick={ (e) => this.fetchMoreData() }>查看更多</a>
                 </div>
             </div>
         );
