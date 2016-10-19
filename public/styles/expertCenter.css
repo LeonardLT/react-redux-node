@@ -130,6 +130,8 @@
   -webkit-transition: all ease 0.5s;
      -moz-transition: all ease 0.5s;
           transition: all ease 0.5s;
+  float: left;
+  margin-right: 4px;
 }
 .max-code:focus {
   border: 1px solid #f65131;

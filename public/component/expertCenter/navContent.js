@@ -6,6 +6,7 @@
 import React, {Component} from 'react';
 import ExpertCenter from './expertCenter';
 import BasicInfo from './basicInfo';
+import ModifyPhone from './modifyPhone';
 
 class NavContent extends Component {
     render() {
@@ -13,6 +14,7 @@ class NavContent extends Component {
             <div className="e-r-content">
                 <ExpertCenter></ExpertCenter>
                 <BasicInfo></BasicInfo>
+                <ModifyPhone></ModifyPhone>
             </div>
         );
     }
