@@ -85,10 +85,8 @@ class OverseaReg extends Component {
                     );
                     document.getElementById('model').style.display = "none";
                 } else {
-                    document.getElementById('regOut-failed').style.display = "none";
+                    document.getElementById('regOut-failed').style.display = "block";
                 }
-
-                if(res.body.status === 0) document.getElementById('regOut-failed').style.display = "block";
             })
     }
 

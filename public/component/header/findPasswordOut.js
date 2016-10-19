@@ -61,14 +61,10 @@ class FindPasswordOut extends Component {
 
                     document.getElementById('findPwordOutPassword').value = "";
 
-                    
-
-
                 } else {
-                    document.getElementById('findPwordOut-fail').style.display = "none";
+                    document.getElementById('findPwordOut-fail').style.display = "block";
                 }
 
-                if(res.body.status === 0) document.getElementById('findPwordOut-fail').style.display = "block";
             })
     }
 

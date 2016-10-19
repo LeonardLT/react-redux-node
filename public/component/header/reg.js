@@ -95,10 +95,8 @@ class Register extends Component {
                     );
                     document.getElementById('model').style.display = "none";
                 } else {
-                    document.getElementById('reg-failed').style.display = "none";
+                    document.getElementById('reg-failed').style.display = "block";
                 }
-
-                if(res.body.status === 0) document.getElementById('reg-failed').style.display = "block";
             })
     }
 

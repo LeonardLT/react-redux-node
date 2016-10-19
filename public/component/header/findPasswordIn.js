@@ -83,12 +83,9 @@ class FindPasswordIn extends Component {
                     document.getElementById('reg').style.display = 'none';
                     document.getElementById('oversea-reg').style.display = 'none';
 
-
                 } else {
-                    document.getElementById('findPword-fail').style.display = "none";
+                    document.getElementById('findPword-fail').style.display = "block";
                 }
-
-                if(res.body.status === 0) document.getElementById('findPword-fail').style.display = "block";
             })
     }
 
