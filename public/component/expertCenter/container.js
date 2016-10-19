@@ -5,13 +5,15 @@
  */
 import React, {Component} from 'react';
 import Nav from './nav'
+import NavContent from './navContent'
 
 class Container extends Component {
     render() {
         return (
             <div className="container">
-                <div className="flex mt30">
+                <div className="flex mt130">
                     <Nav></Nav>
+                    <NavContent></NavContent>
                 </div>
             </div>
         );
