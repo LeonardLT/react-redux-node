@@ -28,11 +28,11 @@ app.use(express.static('./assets/'));
 // });
 
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/assets/index/index.html')
+  res.sendFile(__dirname + '/assets/index.html')
 });
 
-app.get('/admin', function(req, res) {
-  res.sendFile(__dirname + '/assets/admin/index.html')
+app.get('/expertCenter', function(req, res) {
+  res.sendFile(__dirname + '/assets/expertCenter.html')
 });
 
 app.listen(3000, function() {
