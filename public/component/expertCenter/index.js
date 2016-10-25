@@ -11,6 +11,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import reducers from '../../reducers/expertCenter'
+import { Router, Route, hashHistory } from 'react-router';
 // import { loadExpertData } from '../../actions/fetchData'
 
 require('../../styles/common.css');
@@ -23,7 +24,10 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-        <Content />
+        {/*<Router history={hashHistory}>*/}
+            {/*<Route path="/expertCenter/:id" component={Content}/>*/}
+        {/*</Router>*/}
+        <Content></Content>
     </Provider>,
     document.getElementById("content")
 );

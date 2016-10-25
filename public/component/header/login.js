@@ -149,12 +149,11 @@ class Login extends Component {
                                                     <div className="input-info input-phone" id="phone-sug" ref="phone-sug">请输入正确的11位手机号码</div>
                                                 </div>
                                                 <div className="input-box">
-                                                    <input type="password" className="input-text transition2" placeholder="密码" id="password" ref="password"/>
+                                                    <input type="password" className="input-text transition2" placeholder="密码" id="password" />
                                                     <div className="input-info input-password" id="pass-sug">请输入大于6位小于20位的密码</div>
                                                     <div className="input-info input-password" id="login-failed">请输入正确的账号信息</div>
                                                 </div>
-
-                                                <button className="i-btn transition2" type="submit">登陆</button>
+                                                <button className="i-btn transition2" >登陆</button>
 
                                                 {/*<!--<div className="i-btn i-btn-disabled">登陆</div>-->*/}
 
