@@ -35,6 +35,10 @@ app.get('/expertCenter', function(req, res) {
   res.sendFile(__dirname + '/assets/expertCenter.html')
 });
 
+app.get('/expertDetail', function(req, res) {
+  res.sendFile(__dirname + '/assets/expertDetail.html')
+});
+
 app.listen(3000, function() {
   console.log('Listening on 3000');
 });
