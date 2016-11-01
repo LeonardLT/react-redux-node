@@ -4,9 +4,11 @@
  * Time: 下午8:18
  */
 import { combineReducers } from 'redux'
+import { routerReducer as routing } from 'react-router-redux'
 import { login } from '../login'
 
 const reducers = combineReducers({
+    routing,
     login
 })
 
