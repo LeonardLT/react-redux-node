@@ -5,7 +5,7 @@
  */
 import React, {Component} from 'react';
 import Nav from './nav'
-import NavContent from './navContent'
+import ExpertCenter from './expertCenter';
 
 class Container extends Component {
     render() {
@@ -13,7 +13,9 @@ class Container extends Component {
             <div className="container">
                 <div className="flex mt130">
                     <Nav></Nav>
-                    <NavContent></NavContent>
+                    <div className="e-r-content">
+                        <ExpertCenter></ExpertCenter>
+                    </div>
                 </div>
             </div>
         );

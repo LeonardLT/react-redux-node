@@ -4,6 +4,7 @@
  * Time: 上午10:43
  */
 import React, {Component} from 'react';
+import { Link } from 'react-router';
 const img1 = require('../../img/expertDetail/2.jpg');
 
 class HeaderCard extends Component {
@@ -21,7 +22,9 @@ class HeaderCard extends Component {
                                     马胜军
                                     <i className="iconfont icon-heart"></i>
                                 </h1>
-                                <h3 className="mt10 blue alter">修改个人资料</h3>
+                                <h3 className="mt10 blue alter">
+                                    <Link to="/modifyBasicInfo">修改个人资料</Link>
+                                </h3>
                             </div>
                         </div>
                     </div>

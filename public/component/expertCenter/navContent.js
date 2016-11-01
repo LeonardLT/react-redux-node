@@ -13,8 +13,6 @@ class NavContent extends Component {
         return (
             <div className="e-r-content">
                 <ExpertCenter></ExpertCenter>
-                <BasicInfo></BasicInfo>
-                <ModifyPhone></ModifyPhone>
             </div>
         );
     }
